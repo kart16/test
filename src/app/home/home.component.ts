@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   
   fct(){
     for(var i=0;i<7;i++){
-      this.imgTab[i]="../../assets/images/img"+(i+1)+".jpg";
+      this.imgTab[i]="assets/images/img"+(i+1)+".jpg";
     }
   }
 

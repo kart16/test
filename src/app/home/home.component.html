@@ -17,14 +17,14 @@
     </div>
     
     <div class="w3-quarter" *ngFor="let bulletin of bulletinTab">
-        <!--<img src="../../assets/images/autumn.jpg" alt="Snow" style="width:100%">-->
+        <!--<img src="assets/images/autumn.jpg" alt="Snow" style="width:100%">-->
 
           <div class="card-deck">
             <!-- Card -->
             <mdb-card>
               <div class="view overlay waves-light" mdbWavesEffect>
                 <!-- Card img -->
-                <mdb-card-img src="../../assets/images/pdf.png"  alt="Bulletin d'information"></mdb-card-img>
+                <mdb-card-img src="assets/images/pdf.png"  alt="Bulletin d'information"></mdb-card-img>
                 <a>
                   <div class="mask rgba-white-slight" (click)="basicModal.show()"></div>
                 </a>
@@ -106,7 +106,7 @@
   <!---------------------------------ICONE FLOTANT------------------------------------>
 
     <button type="button" mdbBtn class="open-button relative waves-light image-clignote" (click)="basicModal.show()" mdbWavesEffect style="z-index: 6;">
-      <img src="../../assets/images/priere2.png" alt="#" title="Intentions de Prière">
+      <img src="assets/images/priere2.png" alt="#" title="Intentions de Prière">
     </button>
 
     <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
@@ -152,7 +152,7 @@
 
               <button style="float: right;" type="submit" mdbBtn color="success" class="relative waves-light" mdbWavesEffect (click)="basicModal.hide()" [disabled]="prayerForm.invalid">Envoyer</button>
               
-              <button style="border: none; background-color: transparent;"><img src="../../assets/images/pt_priere.jpg" class="d-inline-block" 
+              <button style="border: none; background-color: transparent;"><img src="assets/images/pt_priere.jpg" class="d-inline-block" 
                     alt="prière" 
                     mdbTooltip="PRIERE A SAINT CAMILLE DE LELLIS AVEC LA CROIX BENIE POUR LES MALADES" 
                     placement="left"
@@ -183,9 +183,9 @@
             <h4 class="modal-title w-100" id="myModalLabel">Prière à St Camille</h4>
           </div>
           <div class="modal-body" style="text-align: center;">
-            <img style="box-shadow: 12px 12px 2px 1px rgba(69, 69, 75, 0.2);" src="../../assets/images/gd_priere.jpg" class="d-inline-block" alt="prière">
+            <img style="box-shadow: 12px 12px 2px 1px rgba(69, 69, 75, 0.2);" src="assets/images/gd_priere.jpg" class="d-inline-block" alt="prière">
                     <br><br><br>
-            <img style="box-shadow: 12px 12px 2px 1px rgba(69, 69, 75, 0.2);" src="../../assets/images/gd_priere2.png" alt="prière" width="700">
+            <img style="box-shadow: 12px 12px 2px 1px rgba(69, 69, 75, 0.2);" src="assets/images/gd_priere2.png" alt="prière" width="700">
                     <br><br><br>
           </div>
         </div>
