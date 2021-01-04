@@ -1,0 +1,59 @@
+<div class="container">
+  <h2 style="color: darkred; text-align: center;">COMMENT NOUS AIDER ?</h2>
+  
+  <div class="row">
+    
+      <div class="col-sm-12 col-lg-12">
+        <div class="scrollspy-example z-depth-1 mt-4 px-4">
+          
+          <section>
+            <h4 style="color: rgb(29, 99, 190); margin-bottom: 2%; padding-top: 3%;"><mdb-icon fas icon="star-of-life pr-3"></mdb-icon>Faire un don</h4>
+            <img src="../../assets/images/log_aide.jpeg" height="25%" width="25%" class="img-fluid float-right" alt="img">
+            <p style="text-align: center;">Notre association, loi 1901, <br>
+              est habilitée à recevoir des dons, legs et assurances-vie, <br>
+              exempts des droits de succession et mutation. <br>
+            </p>
+            <p style="text-align: center; font-weight: bold; color: darkred; font-size: x-large;">Faire un legs à notre association, c’est prolonger votre action de générosité, <br>
+              c’est donner un avenir aux enfants et aux malades que nous aidons.
+            </p>
+            <p style="color: rgb(29, 99, 190); font-weight: bold; text-align: center; font-size: x-large;">Avec mon don (don déductible de mes impôts : 66% de mon versement), Aide aux Missions Camilliennes, je verse</p>
+            <ul style="text-align: center;">
+              <li style="list-style-type: none; "><mdb-icon fas icon="caret-right pr-3"></mdb-icon>Par chèque à l’ordre de : <span style="font-weight: bold;">Aide aux Missions Camilliennes, <br>179 bis, Bd Pasteur - B.P. 60026 - 94363 Bry sur Marne Cedex</span></li>
+              <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>Par virement : <span style="font-weight: bold;">IBAN : FR76 1470 7000 1601 6193 8788 702 <br>BICS : CCBPFRPPMTZ</span></li>
+             </ul>
+             <h4 style="color: rgb(29, 99, 190); margin-bottom: 2%; padding-top: 3%;"><mdb-icon fas icon="star-of-life pr-3"></mdb-icon>Nous contacter</h4>
+            <p> 
+             179 bis, Bd Pasteur - B.P. 60026<br>
+              94363 BRY SUR MARNE CEDEX<br>
+              E-mail : <a href="mailto:missionscamilliennes@yahoo.fr ">missionscamilliennes@yahoo.fr</a><br>
+            </p>
+            <p>Vous pouvez également télécharger, imprimer et remplir le formulaire en cliquant sur les images ci-dessous :</p>
+            <a style="color: white;" href="../../assets/images/ph_don1.jpg" download="ph_don1.jpg">
+              <img src="../../assets/images/ph_don1.jpg" height="100%" width="100%" class="img-fluid" alt="img">
+            </a>
+            <a style="color: white;" href="../../assets/images/ph_don2.jpg" download="ph_don1.jpg">
+              <img src="../../assets/images/ph_don2.jpg" height="100%" width="100%" class="img-fluid" alt="img">
+            </a>
+          </section>
+
+          
+          <br>
+          <button *ngIf="isShow" type="button" mdbBtn class="open-button relative waves-light image-clignote" (click)="gotoTop()" mdbWavesEffect style="z-index: 6;"><mdb-icon fas icon="chevron-up" size="3x" class="red-text pr-3"></mdb-icon></button>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- PAYPAL
+  <div class="container" style="text-align:center">
+  <div>
+      <label for="name">
+        Entrez la sommes à offrir 
+      </label>
+      <input type="number" id="prix"  name="name" value="{{price}}"  [(ngModel)]="price"><i class="glyphicon glyphicon-euro"></i> <br>
+  </div>
+  <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+</div>
+-->
+

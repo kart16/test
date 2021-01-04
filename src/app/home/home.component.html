@@ -1,0 +1,195 @@
+<!-- ******************** CAROUSEL *******************-->
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+  <mdb-carousel-item *ngFor="let image of imgTab">
+    <div class="view w-100">
+      <img class="d-block w-100" style="min-width: 400px; min-height: 250px;" [src]=image alt="First slide">
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
+<!---****************** Fin Carousel ****************-->
+  
+  <!-- Work Row -->
+  <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+    
+    <div class="w3-quarter">
+      <h2>Actualité</h2>
+      <p>Suivre notre Actualité à travers nos différents bulletins</p>
+    </div>
+    
+    <div class="w3-quarter" *ngFor="let bulletin of bulletinTab">
+        <!--<img src="../../assets/images/autumn.jpg" alt="Snow" style="width:100%">-->
+
+          <div class="card-deck">
+            <!-- Card -->
+            <mdb-card>
+              <div class="view overlay waves-light" mdbWavesEffect>
+                <!-- Card img -->
+                <mdb-card-img src="../../assets/images/pdf.png"  alt="Bulletin d'information"></mdb-card-img>
+                <a>
+                  <div class="mask rgba-white-slight" (click)="basicModal.show()"></div>
+                </a>
+              </div>
+              <!--Card content-->
+              <mdb-card-body>
+                <!--Title-->
+                <mdb-card-title>
+                  <h4 style="color: black; font-weight: bold;">bulletin {{bulletin}}</h4>
+                </mdb-card-title>
+          
+                <!--Text-->
+                <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                </mdb-card-text>
+          
+                <!--<a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>-->
+                <button type="button" mdbBtn color="info" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Afficher</button>
+              </mdb-card-body>
+            </mdb-card>
+          </div>
+          
+          <div mdbModal #basicModal="mdbModal" class="modal fade bottom" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-full-height modal-bottom modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title w-100" id="myModalLabel">bulletin {{bulletin}}</h4>
+                </div>
+                <div class="modal-body">
+                  <pdf-viewer src="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf" 
+                              [render-text]="true"
+                              style="display: block;">
+                  </pdf-viewer>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" mdbBtn color="info" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Fermer</button>
+                  <button type="button" mdbBtn color="success" class="relative waves-light" mdbWavesEffect>
+                    <a style="color: white;" href="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf" download="bulletin.pdf">
+                      Télécharger
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+  </div>
+<!-- Work Row -->
+  
+  <!-- contact Container -->
+  <div class="w3-container w3-padding-64 w3-theme-l6" id="prayer">
+    <div class="w3-row-padding">
+      <div class="w3-col m5">
+        <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Où sommes nous</span></div>
+          <p style="font-size: larger;"><mdb-icon fas icon="map-marker-alt" size="lg" class="red-text pr-2"></mdb-icon>179 boulevard Pasteur, 94360 Bry-sur-Marne</p>
+          <p style="font-size: larger;"><mdb-icon fas icon="mobile-alt" size="lg" class="pr-2"></mdb-icon> +33 01 48 81 59 88</p>
+          <p style="font-size: larger;"><mdb-icon fas icon="envelope" size="lg" class="green-text pr-2"></mdb-icon> <a href="mailto:camlliens.bry@gmail.com"> camlliens.bry@gmail.com</a></p> <br>
+      </div>
+
+      <div class="w3-col m6 s10">
+        <iframe class="responsive-iframe" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.2954822458046!2d2.5250874156734975!3d48.83350227928512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60dea3df4a599%3A0x3edefb070998caf5!2s179%20Boulevard%20Pasteur%2C%2094360%20Bry-sur-Marne!5e0!3m2!1sfr!2sfr!4v1600002373780!5m2!1sfr!2sfr"
+        height="300">
+        </iframe>
+      </div>
+
+    </div>
+
+  </div>
+
+  <br>
+  <button *ngIf="isShow" type="button" mdbBtn class="open-button-top relative waves-light" (click)="gotoTop()" mdbWavesEffect style="z-index: 6;"><mdb-icon fas icon="chevron-up" size="3x" class="red-text pr-3"></mdb-icon></button>
+
+  <!---------------------------------ICONE FLOTANT------------------------------------>
+
+    <button type="button" mdbBtn class="open-button relative waves-light image-clignote" (click)="basicModal.show()" mdbWavesEffect style="z-index: 6;">
+      <img src="../../assets/images/priere2.png" alt="#" title="Intentions de Prière">
+    </button>
+
+    <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-full-height modal-right modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title w-100" id="myModalLabel">Soumettre une intention de prière</h4>
+          </div>
+
+          
+          <div class="modal-body">
+
+            <form [formGroup]="prayerForm" (ngSubmit)="onSubmitPrayer()">
+            <div class="modal-body mx-3">
+
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                <input type="text" id="form34" class="form-control" mdbInput mdbValidate [formControl]="prayerFormModalName">
+                <label for="form34">Votre prénom</label>
+                <mdb-error
+                  *ngIf="prayerFormModalName.invalid && (prayerFormModalName.dirty || prayerFormModalName.touched)">Veuillez
+                  saisir un nom
+                </mdb-error>
+                <mdb-success
+                  *ngIf="prayerFormModalName.valid && (prayerFormModalName.dirty || prayerFormModalName.touched)">
+                </mdb-success>
+              </div>
+      
+              <div class="md-form">
+                <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
+                <textarea type="text" id="form8" class="md-textarea form-control" rows="2" mdbInput mdbValidate
+                          [formControl]="prayerFormModalPrayer"></textarea>
+                <label for="form8">Votre intention</label>
+                <mdb-error
+                  *ngIf="prayerFormModalPrayer.invalid && (prayerFormModalPrayer.dirty || prayerFormModalPrayer.touched)">
+                  Veuillez saisir une intention
+                </mdb-error>
+              </div>
+
+              <button style="float: right;" type="submit" mdbBtn color="success" class="relative waves-light" mdbWavesEffect (click)="basicModal.hide()" [disabled]="prayerForm.invalid">Envoyer</button>
+              
+              <button style="border: none; background-color: transparent;"><img src="../../assets/images/pt_priere.jpg" class="d-inline-block" 
+                    alt="prière" 
+                    mdbTooltip="PRIERE A SAINT CAMILLE DE LELLIS AVEC LA CROIX BENIE POUR LES MALADES" 
+                    placement="left"
+                    (click)="basicModalPriere.show()"><!-- cf. modal de la prière de St Camille -->
+              </button>
+            </div>
+            </form>
+          </div>
+              
+          <div class="modal-footer">
+            <button type="button" mdbBtn color="info" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Fermer</button>
+          </div>
+              
+        </div>
+      </div>
+    </div>
+  <!---------------------------------ICONE FLOTANT------------------------------------>
+  
+  <!-- modal de la prière de St Camille -->
+
+    <div mdbModal #basicModalPriere="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close pull-right" aria-label="Close" (click)="basicModalPriere.hide()">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title w-100" id="myModalLabel">Prière à St Camille</h4>
+          </div>
+          <div class="modal-body" style="text-align: center;">
+            <img style="box-shadow: 12px 12px 2px 1px rgba(69, 69, 75, 0.2);" src="../../assets/images/gd_priere.jpg" class="d-inline-block" alt="prière">
+                    <br><br><br>
+            <img style="box-shadow: 12px 12px 2px 1px rgba(69, 69, 75, 0.2);" src="../../assets/images/gd_priere2.png" alt="prière" width="700">
+                    <br><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- modal de la prière de St Camille -->

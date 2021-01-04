@@ -1,0 +1,208 @@
+.bg-img {
+    
+   // background-image:url("../../assets/images/navbar-img.jpg");    /* Insertion de l'image */
+    background-repeat : no-repeat ;                             /*permet de ne pas répéter L'image de fond */
+    background-attachment : fixed ;                             /* Le fond restera fixe */
+    background-position: center;                                /* pour la position de l'image on a top, right, left, bottom, center */
+    background-size: cover;                                     /* La taille de l'image */ 
+    
+}
+
+/*
+.body {
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.45), 
+    rgba(0, 0, 0, 0.45)
+    ),url("http://codekillr.com/wp-content/uploads/2017/02/skiing-691236_960_720.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+*/
+
+
+@font-face { /* Définition d'une nouvelle police nommée CAC Champagne */
+    font-family: 'KaushanScript-Regular';
+    src: url('../../assets/text-style/KaushanScript-Regular.otf');
+}
+
+.div-ombrage {
+    box-shadow: 8px 8px 0px #aaa; 
+}
+
+
+/************************************* faire apparaitre du text ******************************/
+/******************************************** debut Franck ***********************************/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+html {
+  height: 100%;
+}
+
+.body {
+  background-color: rgb(143, 233, 255);
+}
+
+.word {
+  margin: auto;
+  color: white;
+  font: 700 normal 3em/1.5 'Montserrat',sans-serif;
+  text-shadow: 1px 2px #288ce3, 2px 4px #288ce3, 3px 6px #288ce3, 4px 8px #288ce3, 5px 10px #288ce3, 6px 12px #288ce3, 7px 14px #288ce3, 8px 16px #288ce3, 9px 18px #288ce3, 10px 20px #288ce3;
+}
+
+/**************************** Changer la couleur du sous-text ***************/
+.txt:hover
+{
+    color :#288ce3;
+}
+
+/**************************** Changer la couleur de la barre de nav ***************/
+.nav > li > a:hover{
+  background-color: rgb(255, 255, 255);
+  color: orange;;
+  text-emphasis-color: red;
+  font-size: 1.2em;
+  //text-decoration: underline overline #FF3028;
+  //text-decoration: overline;
+  //text-decoration: overline;
+  border-bottom : 2px solid orange;
+}
+
+.home:hover {
+  background-color: rgb(255, 255, 255);
+  color: orange;;
+  text-emphasis-color: red;
+  font-size: 1.2em;
+  //text-decoration: underline overline #FF3028;
+  //text-decoration: overline;
+  //text-decoration: overline;
+  border-bottom : 2px solid orange;
+}
+
+.responsive-iframe {
+  position: relative;
+  width: 120%;
+  border: none;
+}
+
+
+/********************************************************* icone flotant ***********************************************************/
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  //background-color: #555;
+  background-color:white;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 60px;
+}
+
+.open-button-top {
+  //background-color: #555;
+  background-color:white;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 98px;
+  width: 60px;
+}
+
+/* The popup chat - hidden by default
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+} */
+
+/* Add styles to the form container
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+ */
+/* Full-width textarea 
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}*/
+
+/* When the textarea gets focus, do something
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+} */
+
+/* Set a style for the submit/send button
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+} */
+
+/* Add a red background color to the cancel button
+.form-container .cancel {
+  background-color: red;
+} */
+
+/* Add some hover effects to buttons
+.form-container .btn:hover:hover {
+  opacity: 1;
+} */
+
+.open-button:hover {
+  opacity: 1;
+  background-color: saddlebrown;
+  animation-name: none;
+}
+
+
+.image-clignote  {
+  animation-duration: 2s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+@keyframes clignoter {
+ 0%   { opacity:1; }
+ 40%   {opacity:0; }
+ 100% { opacity:1; }
+}
+
+/***********************************************************************************************************/
+
+
+/******************************************** https://www.w3schools.com/w3css/4/w3.css ******************************************/
+
+
+
+/**************************************** https://www.w3schools.com/lib/w3-theme-black.css ***************************************/
+
+
+
+/************************https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css************************/
+

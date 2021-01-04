@@ -1,0 +1,92 @@
+<div class="container">
+    <h2 style="color: darkred; text-align: center;">LES LAICS ASSOCIES (La Famille Camillienne Laïque)</h2> <br>
+    <h4 style="color: rgb(29, 99, 190); text-align: center;"> La spiritualité camillienne pour les laïcs au service des malades</h4>
+  
+    <div class="row">
+      
+        <div class="col-sm-12 col-lg-12">
+          <div class="scrollspy-example z-depth-1 mt-4 px-4">
+
+          <ul ngbNav #nav="ngbNav" class="nav-tabs justify-content-center">
+            <li [ngbNavItem]="1">
+              <a style="font-size: x-large; font-weight: bold;" ngbNavLink> Pour qui ?</a>
+              <ng-template ngbNavContent>
+                <p class="p-ng-template">Pour tous ceux qui, dans l’exercice de leur profession ou de leur activité bénévole auprès des malades, 
+                  ou du fait de leur maladie, de leur handicap, veulent vivre davantage leur engagement baptismal, 
+                  en suivant l’Evangile du Christ à l’exemple de Saint Camille de Lellis.
+                </p>
+                <br>
+                <p style="text-align: center;"><img style="box-shadow: 0.5px 8px 3px 0.5px rgba(0, 0, 0, 0.507); border: solid  5px whitesmoke; border-radius: 5%" src="../../assets/images/pour_qui_.jpg" class="img-fluid" alt="img"></p>
+                <br>
+                <br>
+                <h4 style="text-align: center;"><button (click)="basicModal.show()" style="border: none; background-color: transparent; color: rgb(29, 99, 190);"><i class="fas fa-forward"></i> La fammille Camillienne dans le monde</button></h4>
+                <br>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <a style="font-size: x-large; font-weight: bold;" ngbNavLink> Pour quoi ?</a>
+              <ng-template ngbNavContent>
+                <img src="../../assets/images/pour_quoi.png" height= "30%" width="30%" class="rounded img-fluid float-left" alt="img">
+                <ul>
+                    <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>Appartenir à une famille spirituelle dans laquelle partager joies et difficultés.</li>
+                    <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>Mieux se former et mettre en pratique les enseignements reçus</li>
+                    <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>Fortifier sa vie de prière et recevoir un accompagnement spirituel spécifique </li>
+                    <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>Soutenir les religieux camilliens dans leurs œuvres caritatives et missionnaires</li>
+                  </ul>
+                  <br>
+                  <br>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+              <a style="font-size: x-large; font-weight: bold;" ngbNavLink> Comment ?</a>
+              <ng-template ngbNavContent>
+                <p style="font-size: x-large; font-weight: bolder; color: goldenrod;">En donnant de son temps aux malades selon plusieurs possibilités :</p>
+                <ul>
+                  <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>S’engager comme membre d’une équipe d’aumônerie d’hôpital</li>
+                  <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>S’engager auprès du Service Evangélique des Malades (SEM)</li>
+                  <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>S’engager à prier pour les malades</li>
+                  <li style="list-style-type: none;"><mdb-icon fas icon="caret-right pr-3"></mdb-icon>Aider, dans certaines structures, les personnes hospitalisées à se nourrir ...</li>
+                </ul>
+               <p style="font-size: x-large; font-weight: bolder; color: goldenrod;">« <cite>Que n’ai-je cent bras pour soulager tant de misère !</cite> » (Saint Camille)</p>
+               <img src="../../assets/images/log_fam_camillienne.jpg" class="rounded img-fluid" alt="img">
+              </ng-template>
+            </li>
+          </ul>
+          <br>
+          <br>
+          <div [ngbNavOutlet]="nav" class="mt-2"></div>
+      
+            <br>
+            <button *ngIf="isShow" type="button" mdbBtn class="open-button relative waves-light image-clignote" (click)="gotoTop()" mdbWavesEffect style="z-index: 6;"><mdb-icon fas icon="chevron-up" size="3x" class="red-text pr-3"></mdb-icon></button>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade bottom" tabindex="-1" role="dialog" aria-labelledby="mybasicModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100" id="myModalLabel" style="color: rgb(29, 99, 190);">La fammille Camillienne dans le monde</h4>
+    </div>
+    <div class="modal-body">
+      <pdf-viewer src="../../assets/pdf/Texte_historique.pdf" 
+                  [render-text]="true"
+                  style="display: block;">
+      </pdf-viewer>
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="info" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Fermer</button>
+      <button type="button" mdbBtn color="success" class="relative waves-light" mdbWavesEffect>
+        <a style="color: white;" href="../../assets/pdf/Texte_historique.pdf" download="Texte_historique.pdf">
+          Télécharger
+        </a>
+      </button>
+    </div>
+  </div>
+</div>
+</div>

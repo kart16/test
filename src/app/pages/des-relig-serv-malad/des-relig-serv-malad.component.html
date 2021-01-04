@@ -1,0 +1,645 @@
+<div class="container">
+    <h2 style="color: darkred; text-align: center;">QUI SOMMES-NOUS ?</h2> <br>
+
+    <div class="row">
+        <div class="col-md-7 col-sm-7 col-lg-7">
+            <section>
+                <h2 class="h2-section"> Des religieux au service des malades</h2>
+                <p><span style="font-weight: bold; color: black; font-size: larger;">Des hommes baptisés, qui vivent en communauté leur union au Christ par le témoignage de 
+                    son amour miséricordieux pour les malades, les pauvres et les souffrants.</span></p>
+                    
+                <p style="font-size: larger;  color: black;"><cite title="Source Title">« Notre institut, de par sa nature, est formé de religieux clercs et de religieux laïques, appelés par saint Camille Pères et Frères. 
+                    Il a pour objectif le service global du malade dans toutes les dimensions de sa personne. C’est à lui que nous accordons tous nos soins, 
+                    nos capacités et nos compétences. Ainsi, nous nous disposons à assumer tout service dans le monde de la santé pour la construction du Royaume de Dieu et pour la promotion de l’homme. » <br>
+                </cite>[Constitution n°43]
+                </p>
+                <br>
+                <p style="text-align: center;"><img src="../../assets/images/ph_camilliens.jpg" width="70%" alt="img"></p>
+                
+            </section>
+        </div>
+
+        <div class="col-md-5 col-sm-5 col-lg-5">
+            <nav class="navbar navbar-light bg-info-color flex-column mt-4 lighten-3 py-4 mb-r font-weight-bold">
+                <a class="navbar-brand" style="font-size: 180%;">SOMMAIRE</a>
+                <nav mdbScrollSpy="scrollspy3" class="nav nav-pills flex-column">
+                    <a class="a-crollspy" [routerLink]="['/des-religieux-au-service-des-malades']"  fragment="peres_freres">Pères et frères</a>
+                        <ul class="nav flex-column ml-3">
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['/des-religieux-au-service-des-malades']" fragment="temoignages"><mdb-icon fas icon="chevron-right" size="lg" class="pr-2"></mdb-icon>Témoignages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['/des-religieux-au-service-des-malades']" fragment="oblats"><mdb-icon fas icon="chevron-right" size="lg" class="pr-2"></mdb-icon>Oblats</a>
+                            </li>
+                        </ul>
+                    <a class="a-crollspy" [routerLink]="['/des-religieux-au-service-des-malades']"  fragment="service">Des professionnels de santé au service de la vie </a>
+                    <a class="a-crollspy" [routerLink]="['/des-religieux-au-service-des-malades']"  fragment="histoire">Histoire de la province de France </a>
+                    <a class="a-crollspy" [routerLink]="['/des-religieux-au-service-des-malades']"  fragment="saints">Quelques figures de Sainteté</a>
+                    
+                </nav>
+            </nav>
+        </div>
+
+    </div>
+
+  
+    <div class="row">
+      
+        <div class="col-sm-12 col-lg-12">
+          <div class="scrollspy-example z-depth-1 mt-4 px-4">
+                
+            <section id="peres_freres" class="p_section">
+                <p style="padding-bottom: 1%; padding-top: 3%; font-size: larger;" > <span style="font-weight: bold; color:  rgb(29, 99, 190)">
+                    <i class="fas fa-square"></i> Pères et Frères nous appartenons par notre Profession Solennelle à l’Ordre des Serviteurs des Malades partie vivante de l’Eglise Catholique.
+                </span>
+                </p>
+                
+                <p>Pères et Frères nous avons les mêmes devoirs et obligations dans le service auprès des malades, dans notre formation religieuse, professionnelle, théologique.</p>
+                <p>Les camilliens sont répandus dans 37 pays dans le monde.</p>
+                <p>Le signe distinctif de l’Ordre que nous portons est la croix rouge camillienne, symbole de l’amour du Christ rédempteur pour tous les hommes.</p>
+                <p>Nous prononçons quatre vœux : chasteté, pauvreté, obéissance, ainsi que celui de soigner les malades, même contagieux, au péril de notre vie.</p>
+                <p>Aujourd’hui les Serviteurs des Malades de la province de France sont présents comme : éducateur spécialisé, aumôniers d’hôpitaux, en centre anti cancéreux *, 
+                    aumônier national des sourds, infirmier, médecin, missionnaire, accompagnateur en guérison intérieure, visiteur de prison *, aumônier général de l’Hospitalité Notre-Dame de Lourdes, 
+                    chapelain aux sanctuaires Notre-Dame de Lourdes...
+                </p>
+                <p><cite title="Source Title">« Par l’action en faveur de la santé, par le soin des malades et le soulagement de la souffrance, 
+                    nous coopérons à l’œuvre de Dieu créateur, nous Le glorifions dans le corps humain et nous exprimons notre foi en la résurrection ... »</cite> <br>
+                    [Constitution n°45]
+                </p>
+
+                <section id="temoignages">
+                    <ul style="list-style-type:none;">
+                        <li>
+                            <h4><button (click)="basicModal1.show()" style="border: none; background-color: transparent; color: rgb(29, 99, 190);"><i class="fas fa-forward"></i> Témoignage d'un aumônier camillien en centre anti cancéreux témoigne</button></h4>
+                        </li>
+                        <li>
+                            <h4><button (click)="basicModal2.show()" style="border: none; background-color: transparent; color: rgb(29, 99, 190);"><i class="fas fa-forward"></i> Témoignage d'un frère camillien, visiteur de prisonniers</button></h4>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="oblats">
+                    <hr style=" margin-left: 22%; margin-top: 4%; margin-bottom: 5%; width:50%;">
+                    <p style="padding-bottom: 1%; padding-top: 1%; font-size: larger;" > <span style="font-weight: bold; color:  rgb(29, 99, 190)">
+                        <i class="fas fa-square"></i> Oblats
+                    </span>
+                    </p>
+                    <p><span style="font-weight: bold; color: black">Nous sommes des hommes qui vivons le charisme de saint Camille de Lellis au sein d’une communauté des Serviteurs des Malades.</span>
+                     Par un engagement privé, à durée illimitée, nous vivons les valeurs de chasteté et d’obéissance. Les oblats participent à la vie communautaire des religieux en partageant la vie liturgique, 
+                     la vie spirituelle, les rencontres communautaires, les repas… Notre vie est rythmée par l’activité salariée dans le milieu sanitaire ou social, en lien avec la vie communautaire. 
+                    </p>
+                    <p><span style="font-weight: bold; color: black">Ce temps peut être aussi, le premier pas dans la vie religieuse.</span> Une année de pré-oblature permet de discerner cette vocation, en approfondissant: <span style="font-weight: bold; color: black">
+                     la vie baptismale, humaine, le charisme de l’Ordre, la vie de saint Camille, les connaissances et la pratique des conseils évangéliques.</span> Ces étapes se vivent en lien avec le responsable et sont relues avec un père spirituel extérieur à la communauté.
+                    </p>
+                </section>
+            </section>
+
+            <section id="service">
+                    <hr style=" margin-left: 22%; margin-top: 5%; margin-bottom: 5%; width:50%;">
+                    <h2 class="h2-section">Des professionnels de santé au service de la vie</h2>
+                    <p><span style="font-weight: bold; color: black">Jésus-Christ est passé en faisant le bien et ce bien nous voulons le faire pour tous les malades, en toutes circonstances (Actes des apôtres 10, 38).</span>
+                     C’est aussi la charité qui s’adresse au Christ : car c’est lui le malade - « j’étais malade » - sous les traits du frère qui souffre ; c’est pourquoi il considère comme rendus à lui - « c’est à moi que vous l’avez fait » - 
+                     les soins charitables prodigués à nos frères (Cf. Mt 25, 31- 40).
+                    </p>
+                    <img src="../../assets/images/ph_camilliens1.jpg" height="50%" width="50%" style="margin-left: 3%;" class="rounded float-right img-fluid" alt="img">
+                    <p><span style="font-weight: bold; color: black">L’activité des professionnels de la santé a valeur inestimable de service envers la vie.</span>
+                     Elle est l’expression d’un engagement profondément humain et chrétien, assumé et exercé, non seulement sous forme d’activité technique, mais de dévouement et d’amour envers le prochain.
+                     <span style="font-weight: bold; color: black"> Elle est « une forme de témoignage chrétien ».</span>
+                    </p>
+                    <p><span style="font-weight: bold; color: black">La vie est un bien primaire et fondamental de la personne humaine.</span>
+                     Prendre soin de la vie c’est accomplir, d’abord, une œuvre authentiquement humaine en faveur de la sauvegarde de la vie physique.
+                    </p>
+                    <p>C’est en faveur de la vie physique, que les professionnels de la santé exercent leur propre activité ainsi que les bénévoles : 
+                     médecins, pharmaciens, infirmier(e)s, aumôniers d’hôpitaux, religieux, religieuses et agents d’administration, et bénévoles de la souffrance, 
+                     engagés à divers titres dans la prophylaxie, le traitement et la réhabilitation de la santé humaine ...<span style="font-weight: bold; color: black">
+                     Sauvegarder, faire recouvrer et améliorer l’état de santé, c’est servir la vie dans sa totalité ...</span>
+                    </p>
+                    <p>Le professionnel de santé, lorsqu’il est vraiment animé d’esprit chrétien, en arrive facilement à découvrir l’exigence de la dimension missionnaire propre à sa profession : en elle, en effet,
+                     <span style="font-weight: bold; color: black"> s’implique toute son humanité car il lui est demandé un dévouement total.</span>
+                    </p>
+                    <p>Parler de mission c’est parler de vocation : c'est-à-dire d’une réponse à un appel transcendant qui se concrétise dans le visage du souffrant et implorant du patient remis à nos soins. Aussi : «
+                     <span style="font-weight: bold; color: black">prendre soin d’un malade avec amour, c’est s’acquitter d’une mission divine, la seule qui soit capable de motiver et de soutenir l’engagement le plus désintéressé, 
+                     le plus disponible et le plus fidèle possible et de lui conférer une valeur sacerdotale</span> ». Le professionnel de la santé est le BON SAMARITAIN de la parabole qui s’arrête auprès de l’homme blessé, 
+                     et se fait son « prochain » dans la charité (cf. Lc 10, 29-37).    
+                    </p>
+                    <p>Profession, vocation et mission se rejoignent et, dans une vision chrétienne de la vie et de la santé, s’intègrent réciproquement. 
+                     Dans la lumière, l’activité médico-sanitaire, au titre de « service de la vie » et de « ministère thérapeutique », acquiert un sens nouveau et plus élevé.
+                    </p>
+                    <p>Ministre de la vie, le professionnel de la santé est ministre de ce Dieu qui dans l’Ecriture est présenté comme « ami de la vie » (Sg 11, 26). 
+                        <span style="font-weight: bold; color: black">Servir la vie c’est servir Dieu en l’homme:</span> c’est être « <span style="font-weight: bold; color: black">collaborateur de Dieu en redonnant la santé au corps malade</span> » 
+                        et c’est louer et rendre gloire à Dieu dans l’accueil aimant de la vie surtout lorsqu’elle est faible et malade.
+                    </p>
+                    <p><cite title="Source Title">[Extrait de la Charte des professionnels de la santé, Conseil pontifical pour la pastorale des services de la santé – Cité du Vatican 1995]</cite></p>
+            </section>
+
+            <section id="histoire">
+                    <hr style=" margin-left: 22%; margin-top: 5%; margin-bottom: 5%; width:50%;">
+                    <h2 class="h2-section">Histoire de la province de France</h2>
+                    <p>Au milieu du 19ème siècle, la diffusion de l’Ordre Camillien était pratiquement limitée à l’Italie. <span style="font-weight: bold; color: black">L’un des premiers pays à accueillir une nouvelle fondation fut la France, voisine de l’Italie, de même souche linguistique.</span>
+                     Ce projet était né du gouvernement général de l’Ordre.
+                    </p>
+                    <p><span style="font-weight: bold; color: black">Le 7 mai 1869, on accorda les pleins pouvoirs au Père Vicaire Général pour réaliser les fondations de Notre Saint Ordre en France,</span>
+                    pour lesquelles il y a de très bonnes perspectives et d’espoirs. Le 25 novembre, en dialogue avec l’évêque de Chalon, Mgr Frédéric Gabriel de MARGUERYE (1852-1872), 
+                    il y avait toutes les chances d’ouvrir une maison au centre de cette ville.
+                    </p>
+                    <p>En novembre le P. Alfred Edouard MOREL, français entré dans la province romaine des camilliens, nommé procureur général prospecta dans la région pour trouver un lieu adapté aux religieux. 
+                        <span style="font-weight: bold; color: black">Les camilliens s’installèrent auprès de Notre Dame de la Chaux à Cuisery</span>
+                        dans le diocèse d’Autun. Sanctuaire fermé depuis 1858, il fut acquis par la famille TUPINIER. Un projet antérieur non réalisé, pour ce lieu était destiné aux prêtres âgés et handicapés. 
+                        Ce projet vit le jour grâce aux camilliens. <span style="font-weight: bold; color: black">Le 3 juin 1870, le père MOREL et la famille TUPINIER signèrent un contrat concernant ce lieu qui devint la première maison camillienne en France.</span>
+                        Le P. Jean-Baptiste ZANONI en fut nommé le supérieur, accompagné par le P. François VIRGILI. Ils constituèrent la première communauté en France, avec pour mission d’implanter l’Ordre en France. Règlement recommandation du lien de la charité et de l’union dans cette nouvelle communauté. 
+                    </p>
+                    <p>La guerre franco-prussienne éclata en juillet 1870, mit en évidence le ministère camillien. Le P. MOREL rejoignit la zone de guerre et soigna les blessés à Metz, assiégé par les allemands. Les pères ZANONI et VIRGILI organisèrent à la Chaux, l’assistance des malades atteints de la variole en l’absence des médecins partis pour la guerre. Le service fourni par les camilliens contribua à faire connaître l’institut, et à trouver l’appui matériel de la population.</p>
+                    <p>Début 1871, furent accueillis deux jeunes premiers postulants. En mars deux anciens soldats alsaciens les rejoignirent. L’un d’eux avait été soigné par un camillien à la maison de la Chaux. Le P. ZANONI, pensa au P. TEZZA pour aider à la formation des postulants. Le 24 août 1871, le P. Louis Arthur TEZZA et le P. Ognibene MOTTERLE arrivèrent à la Chaux, comme maîtres des novices. Les relations avec le village et le clergé étaient excellentes.</p>
+
+                    <p><span style="font-weight: bold; color: black">La vie de cette maison est animée par un règlement pour « une vie commune parfaite ». </span>En mars 1872, un prêtre camillien et deux frères oblats : Antoine et Joseph qui devinrent religieux.</p>
+                    <p><span style="font-weight: bold; color: black">Le 19 mars 1874, fête de St Joseph choisi comme protecteur, fut ouverte la maison appelée Maison St Camille à LYON.</span>
+                        Le 15 août 1877 une troisième maison ouvrit à LILLE, liée à la Faculté de médecine de l’université catholique par son fondateur Camille FERON-VRAU, qui avait toujours eu le désir de faire quelque chose en l’honneur de son saint patron. La nouvelle communauté comprenait 5 pères et 5 frères dont un oblat. Un dispensaire de soins externes, destiné à l’accueil des hommes fut confié aux camilliens.
+                    </p>
+                    <p>
+                        Le 19 mars 1879, par les lois de la 3ème République, le ministre de l’Instruction Publique Jules FERRY déposa un projet de loi qui visait en pratique à interdire l’enseignement aux congrégations religieuses. Les Jésuites furent les premiers expulsés. En mars 1880, on décida la suppression des congrégations qui n’auraient pas demandé dans les trois mois l’autorisation légale pour rester dans le pays.
+                        <span style="font-weight: bold; color: black">En octobre, 31 congrégations d’hommes, dont les camilliens furent expulsés. </span>
+                        La majorité des camilliens en France étant d’origine italienne, ils étaient sujets à être expulsés. En France contrairement à l’Italie en 1866-1867, les camilliens furent expulsés de force. Beaucoup se réfugièrent en Italie. 
+                        Le P. TEZZA et les derniers religieux allèrent à la maison St Julien à Vérone en Italie, le 11 novembre 1880. La maison de Notre Dame de la Chaux était sauvée, un prêtre et cinq frères y restèrent. 
+                        A Lille, restaient un aumônier et 4 frères oblats officiellement employés de l’université. Les deux autres maisons furent également sauvées. Mais les religieux prêtres devaient porter l’habit d’ecclésiastique séculier et les frères l’habit civil. 
+                        Plus tard, la majeure partie des exilés revint en France et récupéra le terrain perdu. Le Père TEZZA revint en France, trois mois après.
+                        <span style="font-weight: bold; color: black">Entre temps, le noviciat des exilés français s’était enrichi de quelques nouvelles vocations de tyroliens et italiens pour faire partie de La vice province française.</span> 
+                    </p>
+                    <p>En 1884, une ouverture inter européenne s’effectua au noviciat de Vérone, avec la venue de français, italiens, tyroliens, belges, hollandais. Se joint à eux le père CARCERERI, camillien de retour de mission en Afrique. Le 15 août 1884, une maison s’ouvrit en Hollande à Roermond. Après la mort du P. GUARDI, le P. VIDO fut nommé provincial de France, le 3 mai 1882. 
+                        <span style="font-weight: bold; color: black"> Le 18 mai 1885, la province française fut officiellement reconnue par le Saint Siège.</span>
+                    </p>
+                    <p><span style="font-weight: bold; color: black">Cette histoire de la province de France marquait l’ère moderne de l’Ordre des Camilliens, de par son développement.</span></p>
+                    <p>L’Institut Camillien connut un fort développement inter européen, se précisant à la fin du 19ème siècle et pendant le 20ème siècle. Des racines implantées en France, naîtront les provinces Allemande, Nord-Américaine, Anglo-irlandaise, Hollandaise, Autrichienne, Polonaise, et s’opéra la restauration de l’ancienne province d’Espagne. La province Française, fondée par des italiens provenant en majorité de la province Lombarde ; pendant les années de la suppression, devint la mère de la division moderne de l’Institut.
+                    </p>
+                    <p><cite title="Source Title">[ Extrait du livre traduit de l’italien, écrit par P. Jerzy KUK : « I Camilliani sotto la guida di P. Camillo GUARDI (1868-1884) » Edizioni Camilliane ]</cite></p>
+                    <h4 style="text-align: center;"><button (click)="basicModal3.show()" style="border: none; background-color: transparent; color: rgb(29, 99, 190);"><i class="fas fa-forward"></i> Les Camilliens dans le Monde</button></h4>
+            </section>
+
+            <section id="saints">
+                <hr style=" margin-left: 22%; margin-top: 5%; margin-bottom: 5%; width:50%;">
+                <h2 class="h2-section">Quelques figures de Sainteté</h2>
+               <p> Cliquez sur leur visage pour connaître la biographie de quelques figures de sainteté. </p>
+                <p style="text-align: center;"><img src="../../assets/images/icone_saints.jpg" alt="L'ordre des Camilliens" width="300" height="409" usemap="#Map1"></p>
+            </section>
+            <br>
+
+          </div>
+        </div>
+    </div>
+    <button *ngIf="isShow" type="button" mdbBtn class="open-button relative waves-light image-clignote" (click)="gotoTop()" mdbWavesEffect style="z-index: 6;"><mdb-icon fas icon="chevron-up" size="3x" class="red-text pr-3"></mdb-icon></button>
+</div>
+
+<!-- zone de map -->
+<map name="Map1" id="Map1">
+    <area style="cursor: help;" shape="rect" coords="77,151,108,183" (click)="areaModal2.show()" alt="Luigi TEZZA"/>
+    <area style="cursor: help;" shape="rect" coords="217,185,250,220" (click)="areaModal8.show()" alt="Domenica BARBANTINI" />
+    <area style="cursor: help;" shape="rect" coords="53,182,86,225" (click)="areaModal4.show()" alt="Giuseppina Vannini"  />
+    <area style="cursor: help;" shape="rect" coords="196,146,230,183" (click)="areaModal7.show()" alt="Enrico REBUSCHINI" />
+    <area style="cursor: help;" shape="rect" coords="26,177,52,221" (click)="areaModal3.show()" alt="Giacomo GIACOPETTI" />
+    <area style="cursor: help;" shape="rect" coords="250,211,274,245" (click)="areaModal9.show()" alt="Bernardino NORCINO"/>
+    <area style="cursor: help;" shape="rect" coords="221,223,250,260" (click)="areaModal10.show()" alt="Girolamo TIRABOSCHI" />
+    <area style="cursor: help;" shape="rect" coords="37,227,67,265" (click)="areaModal5.show()" alt="Germana SOMMARUGA" />
+    <area style="cursor: help;" shape="rect" coords="196,231,221,273" (click)="areaModal11.show()" alt="Camilla GRIMALDI" />
+    <area style="cursor: help;" shape="rect" coords="70,225,94,261" (click)="areaModal6.show()" alt="Nicola D'ONOFRIO" />
+    <area style="cursor: help;" shape="rect" coords="41,148,71,177" (click)="areaModal1.show()" alt="Ilarios CALES" />
+  </map>
+  
+<!-- zone de map -->
+
+<!-- zone de modaux -->
+
+<div mdbModal #basicModal1="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mybasicModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+
+      <div class="modal-content" style="font-size: larger; color: black;">
+        <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel" style="color: rgb(29, 99, 190);">Témoignage d'un aumônier camillien en centre anti cancéreux</h3>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal1.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+            <div class="container">
+            <p>L’équipe d’Aumônerie d’un Centre Régional de Lutte Contre le Cancer est un service parmi d’autres. 
+                <span style="font-weight: bold; color: black">L’originalité de sa mission est de créer un faisceau de relations possibles avec les soignants et les familles entourant le malade, qui est au cœur des soins.</span>
+            </p>
+            <p><span style="font-weight: bold; color: black">La mission de l’aumônerie,</span> se veut être celui d’une communauté qui <span style="font-weight: bold; color: black">vit avec le souffrant, ses angoisses, ses espérances, 
+                ses révoltes ses douleurs et l’aide à travers ce chemin inconnu et toujours déroutant de la maladie à y rencontrer progressivement Jésus Christ dans sa vie quotidienne.</span> 
+                Partenaire d’un service de l’homme respectant sa liberté de conscience, ses valeurs, ses besoins spirituels, sa recherche de sens, l’Aumônier partage des valeurs communes, 
+                en particulier, le souci de la justice pour tous par l’égalité d’accès aux soins, le sens de la droiture dans les comportements personnels et sociaux, par la conscience et l’honnêteté professionnelle.
+            </p>
+            <p>Nous vivons dans un monde passablement virtuel, une société du spectacle, que la faillite des idéologies, l’impasse du scientisme et la marginalisation du politique renvoient, 
+                tôt ou tard, l’homme à une quête de sens. <span style="font-weight: bold; color: black">La quête de sens, la réponse au « pourquoi ? » des choses au sens le plus quotidien comme au sens le plus profond et le plus éternel,</span> 
+                devient central pour un nombre croissant de personnes. C’est encore plus vrai quand on est confronté à une difficulté majeure. L’immersion dans la maladie approfondit l’être, 
+                l’affranchit des choses accessoires. C’est aussi vrai pour ceux qui sont au contact des malades, familles et professionnels de l’hôpital.
+            </p>
+            <p>Observateur des évènements de la vie, de l’esprit, des valeurs du Centre, l’Aumônier se veut être présent, <span style="font-weight: bold; color: black">accueillant, à l’écoute, avec l’affection fraternelle, 
+                débordante de bonté et de générosité, qui n’attend rien en retour, si ce n’est la joie de partager un instant d’entente profonde.</span> Avec cette sensibilité et cette intuition qui permettent très vite de mettre en confiance et d’aborder ce qui est essentiel.
+            </p>
+            <p>Accompagner le malade cancéreux est complexe et délicat. Prendre le temps de ce qui est essentiel dans le respect de la conscience de chacun : 
+                paroles de réconciliation, d’entente. Aider le malade à passer de la souffrance à l’apaisement, du désarroi à la confiance, de l’isolement à l’échange régénérant. 
+                <span style="font-weight: bold; color: black">Toujours à l’écoute, avec cette capacité d’émerveillement devant les malades en chemin vers une fin de vie humaine, digne, et rechercher une Espérance pour après ...</span> 
+                Les aider à passer de la vie terrestre à la vie Transfigurée. On reçoit plus qu’on ne donne ! Ce sont les patients et leurs familles qui me façonnent, m’évangélisent ... 
+                Ils m’enseignent la simplicité, le naturel, l’humilité, le respect de la liberté, la vérité, et de la conscience de chacun : <span style="font-weight: bold; color: black">la richesse de l’Espérance, l’Esprit de Dieu, 
+                l’Esprit d’Amour qui habite en chacun qui fait dire à saint Camille :</span> « <cite title="Source Title">Les pauvres et les malades nous montrent le visage de Dieu.</cite> »
+            </p>
+            <p>Les personnes marquées très sérieusement dans tout leur être, nous engagent à regarder notre vie d’une manière plus authentique. 
+                Elles nous aident à mettre de l’ordre dans nos existences personnelles, à situer les priorités où elles se trouvent vraiment. 
+                Jésus, notre ami et notre Frère universel, ne s’identifie-t-il pas en priorité, à toute personne, en difficulté :"<cite title="Source Title">J’avais faim, 
+                j’étais nu, sans abri ... j’étais malade, et vous êtes venu me voir"</cite> ? <span style="font-weight: bold; color: black">La demande d’un sacrement peut toujours être le point de départ ou l’aboutissement d’un éveil à la foi.</span>
+            </p>
+            <p>Dans une perspective d’Espérance, trois sacrements sont proposés au malade: sacrements de Réconciliation, de l’Eucharistie, 
+                de l’Onction des malades qui concerne l’Espérance de vie. <span style="font-weight: bold; color: black">Appel à combattre avec le Christ pour la guérison, à lutter contre l’emprise de la maladie, 
+                contre le repli sur soi-même</span> qui peut couper le malade des autres et de Dieu. L’onction des malades invite à ouvrir son espérance de guérison à l’espérance totale offerte par le Christ : 
+                celle de la Résurrection qui seule libèrera l’homme définitivement de la souffrance et de la mort.L'ordre des Camilliens </p>
+            </div>
+        </div>
+
+        <div class="modal-footer"></div>
+
+      </div>
+    </div>
+</div>
+
+<div mdbModal #basicModal2="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mybasicModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+
+        <div class="modal-content" style="font-size: larger; color: black;">
+          <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel" style="color: rgb(29, 99, 190);">Témoignage d'un frère camillien, visiteur de prisonniers</h3>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal2.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          </div>
+  
+          <div class="modal-body">
+              <div class="container">
+              <p>A la demande de l’aumônier d’une prison de 700 détenus, j’allais à la messe le samedi pour rencontrer les détenus d’une manière informelle. 
+                 J’ai beaucoup apprécié ce ministère d’écoute. Les prévenus (non jugés) ont droit à trois visites par semaines, les détenus (jugés) ont droit à deux visites. 
+                 Ceux dont la famille ne peut ou ne veut se déplacer, se voient proposer une ou un visiteur agréé(e) au parloir. Un service socio-éducatif leur a proposé ses visites à leur arrivée.
+              </p>
+              <p><span style="font-weight: bold; color: black">Le visiteur rencontre d’abord un homme, et non un numéro d’écrou.</span> Pour moi chaque personne est un être humain avec le secret de sa vie. 
+                <span style="font-weight: bold; color: black">Il faut essayer par l’écoute et la parole de rendre un peu de dignité et de courage au prisonnier.</span> Il est dépositaire d’une parole meurtrie, 
+                confisquée, prise, d’une parole niée, dépossédée de ce qui constitue le pouvoir de dire « je » d’une manière authentique, sans avoir rien à prendre ni rien à gagner. 
+                Et ce n’est qu’à partir de cette parole reconstruite, que le prisonnier pourra alors, modestement distiller du sens, échanger, partager, donner un peu de ce qu’il est. 
+                <span style="font-weight: bold; color: black">Enfin le visiteur doit aider le prisonnier à voir le moins mal possible, l’ici et le maintenant, et préparer demain, en ouvrant sur un avenir toujours possible.</span> Ce n’est ni facile, ni simple.
+              </p>
+              <p>En France, le visiteur de prison porte l’héritage du travail de charité des chrétiens de toute l’histoire bimillénaire du christianisme. <span style="font-weight: bold; color: black"> En se détachant de l’œuvre de Saint Vincent de Paul, 
+                 l’Association nationale des visiteurs de prison [ A.N.V.P.] a continué à mettre en pratique les valeurs universelles des droits de l’homme, tout en renonçant au prosélytisme religieux politique ou moral.</span>
+              </p>
+              <p>Dans l’Evangile de Matthieu 25, 36 s. on peut lire: "<cite title="Source Title">J’étais prisonnier et vous êtes venu me voir"</cite>. <span style="color: rgb(29, 99, 190)">C’est Paul AMOR administrateur pénitentiaire en 1945, 
+                 qui en créant les services sociaux en prison, fit institutionnaliser la fonction de visiteur de prison dans le code de procédure pénale</span>. Pour la majorité des visiteurs de l’ANVP, 
+                 la visite à une personne détenue est celle d’abord d’un membre de la société civile rencontrant un autre citoyen égal à lui-même, puis d’une écoute selon la sensibilité de chacun. Le visiteur vient aussi souvent, 
+                 aussi longtemps que les deux parties le souhaitent en parloir et sans que rien ne filtre. Confidentialité totale sauf en cas de menace sur le pronostic vital de la personne détenue, et sans que cela empiète sur le temps des visites des familles et autres visiteurs psychologues ou avocats. » 
+                 [extrait de la lettre de l’ANVP – Mai 2009] 
+              </p>
+              <p><span style="font-weight: bold; color: black">Les visiteurs de prison, prêtres, religieux, religieuses, et les plus nombreux : les laïcs, visitent les prisonniers en parloir sans limitations de temps. 
+                 Ils écoutent, accompagnent soutiennent aident le détenu à vivre aujourd’hui et à préparer demain.
+                 </span>
+              </p>
+              <p>Association Nationale des visiteurs de Prison - 1 bis, rue de Paradis – 75010 Paris </p>
+              <p><a href="mailto:anvpparis@free.fr ">anvpparis@free.fr</a> - <a href="https://www.anvp.org/">www.anvp.org</a></p>
+              </div>
+          </div>
+  
+          <div class="modal-footer"></div>
+  
+        </div>
+    </div>
+</div>
+
+<div mdbModal #basicModal3="mdbModal" class="modal fade bottom" tabindex="-1" role="dialog" aria-labelledby="mybasicModal3Label"
+aria-hidden="true">
+<div class="modal-dialog modal-full-height modal-bottom modal-dialog-scrollable modal-fluid" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal3.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100" id="myModalLabel" style="color: rgb(29, 99, 190);">Les Camilliens dans le monde</h4>
+    </div>
+    <div class="modal-body">
+      <pdf-viewer src="../../assets/pdf/provinces.pdf" 
+                  [render-text]="true"
+                  style="display: block;">
+      </pdf-viewer>
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="info" class="waves-light" aria-label="Close" (click)="basicModal3.hide()" mdbWavesEffect>Fermer</button>
+      <button type="button" mdbBtn color="success" class="relative waves-light" mdbWavesEffect>
+        <a style="color: white;" href="../../assets/pdf/provinces.pdf" download="provinces.pdf">
+          Télécharger
+        </a>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- modaux area fin -->
+
+<div mdbModal #areaModal1="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal1.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Père Hilaire Calès (1565 – 1636)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+        <p>Hilaire Calès est né dans une famille noble à Mandres aux Quatre Tours, en Lorraine, probablement en 1565. </p>
+        <p>Il est très probable que le jeune Calès a fait partie de la cour ducale ; en 1589, il fut effectivement envoyé par les Guise chez le pape, après l’assassinat du duc.</p>
+        <p>A Rome, il fit connaissance avec l’œuvre de charité du P. Camille. <span style="font-weight: bold; color: black;">Encore gentilhomme d’ambassade, il commença à fréquenter les hôpitaux et à pratiquer les services les plus humbles auprès des malades. Finalement, en 1592, il renonça à toutes ses fonctions et entra dans l’Ordre à la Maddalena.</span> Le 18 novembre 1592, il commença son noviciat qu’il fit à Naples où, après deux ans, il fit profession entre les mains du P. Oppertis.</p> 
+        <p>Envoyé ensuite à Milan, puis à Florence, <span style="font-weight: bold; color: black;">la Consulte lui accorda en 1600 d’accéder au sacerdoce.</span></p>
+        <p>En 1606 il fut transféré à Gênes où il y avait un noviciat florissant et le P. Calès en fut le maître des novices et aussi le supérieur de la communauté partir de 1613 révélant des qualités peu communes, religieuses et de gouvernement.</p>
+        <p>Il y resta jusqu’à sa mort le 20 mars 1636.</p> 
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal2="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal2.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Père Louis TEZZA (1840-1923)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+            <img src="../../assets/images/gph_p_tezza.jpg" height="250" class="rounded float-left" alt="img" style="margin-right: 3%;">
+        <p><span style="font-weight: bold; color: black;">Béatifié le 4 novembre 2001 par le pape Jean-Paul II.</span></p>
+        <p>Prêtre camillien italien, aimable envers tous. <span style="font-weight: bold; color: black;">Il est fondateur, avec la Mère Joséphine VANNINI, de la congrégation des Filles de Saint Camille en 1892.
+        </span></p>
+        <p>Son obéissance héroïque, sa soumission à la volonté de Dieu et sa tranquillité d’esprit lui permirent de surmonter la période tumultueuse des guerres de Risorgimento, du rattachement de la Vénétie au Royaume d’Italie. Puis
+            <span style="font-weight: bold; color: black;">il est envoyé en France pendant 18 ans, à la maison de la Chaux au sanctuaire marial de Cuisery en 1870.
+            </span>
+        </p>
+        <p><span style="font-weight: bold; color: black;">En 1871, le vicaire général l’envoie comme maître des premiers novices français jusqu’en 1889.</span> Puis à Lyon en 1874, à Lille en 1876. En 1877 est fondée la vice Province de France. En 1880 survient la suppression des Ordres religieux en France. 
+            <span style="font-weight: bold; color: black;">Il sauve les maisons grâce à des religieux en habits séculiers,</span> les autres clercs novices et aspirants acceptent de partir pour Vérone, de sorte qu’après la bourrasque, les maisons françaises pourront reprendre vigueur. 
+            <span style="font-weight: bold; color: black;">En 1885, est instituée la Province camillienne de France et le père TEZZA est élu provincial.</span>
+        </p>
+        <p><span style="font-weight: bold; color: black;">En 1900, il est à Lima au Pérou pour y rester dévoué aux malades jusqu’à sa mort.</span>  Sur sa tombe fut gravé la mention : « <span style="font-weight: bold; color: black;">l’Apôtre de Lima</span> ». Il meurt à Lima. </p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal3="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal3.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Frère Giacomo Giacopetti (1591-1657) </h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+        <p>Né à Ripatransone (Piceno) le 25 novembre 1591. Bon musicien et médecin, <span style="font-weight: bold; color: black;">il pratiqua l’art de soigner à l’Hôpital de Saint-Esprit de Rome.</span></p>
+        <p>Il y rencontra saint Camille : <span style="font-weight: bold; color: black;">frappé par ses exemples héroïques de charité, il embrassa son institut et entra au noviciat de Naples en 1612.</span></p>
+        <p>Il y brilla par ses vertus, ses dons surnaturels et, jusqu’en 1628, il ruina sa santé au service des malades des hôpitaux de Naples.</p> 
+        <p>Il passa ensuite <span style="font-weight: bold; color: black;">à Rome où il assista héroïquement les malades de la peste</span>; enfermé dans le lazaret rebut, contagieux, il fut libéré miraculeusement de la maladie. Il alla ensuite à Gênes où il mourut durant la peste de 1657.</p>
+        <p>Il n’est pas croyable combien il travailla et souffrit dans cette ville, sur les traces du Divin Samaritain, au bénéfice des malades du <span style="font-weight: bold; color: black;">grand hôpital Pammatone dont il fut reconnu comme le grand bienfaiteur et apôtre</span>.
+             Il y repose dans un tombeau marqué d’une stèle-souvenir de marbre, commandée par l’administration hospitalière en 1897.
+        </p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal4="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal4.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Mère Joséphine VANNINI (1859-1911)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+            <img src="../../assets/images/gph_m_vannini.jpg" height="250" class="rounded float-left" alt="img" style="margin-right: 3%;">
+        <p><span style="font-weight: bold; color: black;">Béatifiée le 16 octobre 1994 à St Pierre de Rome par Jean-Paul II.</span></p>
+        <p><span style="font-weight: bold; color: black;">En février 1892, le père Louis TEZZA transmet fidèlement le charisme camillien au monde féminin.</span></p>
+        <p>Prêtre camillien italien, aimable envers tous. <span style="font-weight: bold; color: black;">Il est fondateur, avec la Mère Joséphine VANNINI, de la congrégation des Filles de Saint Camille en 1892.</span></p>
+        <p>Il forme des femmes chez lesquelles peut vraiment s’incarner l’intuition de saint Camille : « <cite>Nous désirons avec la grâce de Dieu, servir tous les malades avec cette affection qu’éprouve habituellement une mère aimante, quand elle assiste son unique petit enfant malade. </cite>» </p>
+        <p>Le père TEZZA appellera ce nouvel institut : « <span style="font-weight: bold; color: black;">Les Filles de Saint Camille</span> ».</p>
+        <p>Mère Joséphine VANNINI avait la première reçue ce charisme de Saint Camille.</p>
+        <p><span style="font-weight: bold; color: black;">Avec simplicité, diligence, maîtrise de soi, elle pratiqua le précepte de la charité envers les malades les pauvres, soucieuse de leur salut spirituel et corporel.</span></p>
+        <p>Elle a fondé avec le père TEZZA, l’Institut des Filles de Saint Camille. <span style="font-weight: bold; color: black;">Cette congrégation féminine compte environ mille religieuses présentes dans quatre continents.</span></p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal5="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal5.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Germana Sommarugan (1914-1995)
+            </h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+        <p>Germaine est née à Cagliari le 25 mai 1914. Ouverte à la foi, elle découvrit très tôt le charme du don de soi aux autres; <span style="font-weight: bold; color: black;">à l’âge de neuf ans déjà, elle songeait à partir dans une léproserie pour soigner ceux qu’elle considérait comme les plus pauvres parmi les pauvres, les lépreux.</span></p>
+        <p>Au cours de ses études universitaires, <span style="font-weight: bold; color: black;">elle « rencontra » saint Camille de Lellis. </span>Elle fut fascinée par lui et décida d’en suivre la spiritualité, décision qui se transforma plus tard en la fondation d’un institut avec les variantes spécifiques de sa personnalité et de sensibilité de femme de son temps. Elle conquit un diplôme universitaire à l’Université catholique de Milan, par la discussion d’une thèse sur l’œuvre de saint Camille dans l’assistance des malades; <span style="font-weight: bold; color: black;">au cours des années, elle devint experte sur le saint et en publia finalement diverses biographies;</span> elle rédigea aussi les œuvres de celui-ci en langage usuel.
+        </p>
+        <p>Elle rencontra la « première idée » de son institut le 6 janvier 1936, lorsque les instituts séculiers n’existaient pas encore : l’intuition de la consécration séculière était claire en elle mais les modalités de réalisation n’étaient pas encore définies. Elle exprimait alors en ces termes son idée : « <cite>ne idée imprévue, encore peu nette, mais cependant assez précise : rester dans le monde, donner existence à un mouvement de laïques consacrées qui, dans le monde, assisteraient les malades dans l’esprit de saint Camille, qui pénétreraient dans tous les milieux, même les plus misérables, et y prépareraient la voie au prêtre et au Christ</cite> ».
+        </p>
+        <p><span style="font-weight: bold; color: black;">En 1937, sa rencontre avec le P. Angelo Carazzo, camillien, fut déterminante : </span>celui-ci lui promit son appui : il fut animateur; soutien, guide spirituel; c’est lui qui suscita les premières vocations, mais toujours avec discrétion. Le P. Carazzo mourut en septembre 1945. Mgr Giovanni Cazzani, archevêque de Crémone, suivit d’une paternelle sollicitude les débuts de l’institut et, finalement, en date du 25 mars 1948, 
+            <span style="font-weight: bold; color: black;">il reconnut le nouvel institut séculier « Missionnaires des Malades », de droit diocésain.</span><br> 
+            D’autres étapes suivirent pour la reconnaissance de l’Institut par l’Eglise : <br>
+            - le « décret de louange », le 15 juillet 1953 par le pape Pie XII ;<br>
+            - l’approbation définitive de l’institut de droit pontifical, le 6 janvier 1961, par le pape Jean XXIII. <br>
+            - l’approbation définitive de la constitution le 6 août 1975 par le pape Paul VI.
+        </p>
+        <p>Les dernières années de Germana ont constitué une étape de grande purification en raison de la détérioration progressive de sa santé. En février 1988, elle quitta sa résidence de Milan pour vivre dans une maison de retraite : d’abord à Rho puis à Capriate (Bergame), chez les Camilliens, où elle termina sa course terrestre le 4 octobre 1995.</p>
+        <p><span style="font-weight: bold; color: black;">
+            Du testament spirituel de Germana, nous reproduisons quelques expressions particulièrement intenses qui révèlent son âme intérieure :</span> « <cite>Soyez simples et humbles, sereines, ouvertes aux grands idéaux : une paix inquiète, toujours éveillée, toujours tendue vers une vraie fidélité toujours confiante en Christ Espérance, toujours attentive aux frères qui souffrent, à tous… Toujours ouverte au lendemain mais veillant au moment présent, à la fidélité présente, à l’Evangile, à la Constitution, à la Vie ! </cite>»
+        </p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal6="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal6.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Le clerc Nicola D’Onofrio (1943 – 1964)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+        <p>Nicola D’Onofrio est né le 24 mars 1943 à Villamagna (Chieti), près de Bucchianico, le pays natal de saint Camille.</p>
+        <p>Nicola a grandi dans une famille marquée de profonds sentiments chrétiens.</p>
+        <p>Nicola, d’abord accueilli à Bucchianico, entra ensuite au séminaire camillien de Rome le 3 octobre 1955 à l’âge de 12 ans.</p>
+        <p>C’est à Rome que Nicola passera les restes de sa courte vie, comme aspirant, comme novice et comme clerc profès. <span style="font-weight: bold; color: black;">Déjà comme aspirant, il présenta des traits particuliers de bonté par son beau « visage toujours ouvert au sourire ». </span></p>
+        <p>Avec ses compagnons et les supérieurs, il était disponible pour toutes les activités et services.</p>
+        <p>Après son année de noviciat, il fit sa première profession le 7 octobre 1961. Il poursuivit ses humanités qu’il couronna avec succès en 1963. <span style="font-weight: bold; color: black;">Pour l’année suivante, on prévoyait le début de la formation philosophique et théologique en préparation au sacerdoce, le rêve du clerc D’Onofrio.</span></p>
+        <p>Au lieu de cela ce fut pour lui l’expérience du Calvaire. Atteint d’une grave tumeur maligne, il subit le 30 juillet une intervention chirurgicale à laquelle succédèrent de longues et douloureuses thérapies qu’il supporta toujours avec patience et sérénité.</p>
+        <p><span style="font-weight: bold; color: black;">Le 28 mai, il lui fut accordé de prononcer ses vœux solennels.</span></p>
+        <p>Lucide jusqu’au bout, écrasé par la souffrance dans tout son corps, il laissait transparaître par ses gestes et par son visage la certitude d’une vie meilleure.
+        <span style="font-weight: bold; color: black;">Jusqu’à la fin, il renouvela au Seigneur l’offrande de sa vie. </span>Il est mort le 12 juin 1964. 
+        </p>
+        <p>Entre 2000 et 2004 a eu lieu au Vicariat de Rome l’enquête diocésaine pour sa béatification.</p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal7="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal7Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal7.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Père Henri REBUSCHINI (1860-1938)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+            <img src="../../assets/images/gph_p_rebuschini.jpg" height="250" class="rounded float-left" alt="img" style="margin-right: 3%;">
+        <p><span style="font-weight: bold; color: black;">Béatifié le 4 mai 1997 par le pape Jean-Paul II. </span></p>
+        <p><span style="font-weight: bold; color: black;">Respectueux des autres, voyant en eux le bon côté, prenant le Seigneur comme modèle de Bienveillance.</span></p>
+        <p>Adolescent déjà il ressentait fortement l’intérêt et le souci des malades et des pauvres.</p>
+        <p>Expert comptable il entra dans l’administration de l’hôpital civil de Côme.</p>
+        <p><span style="font-weight: bold; color: black;">Il délaissait ses fonctions et préférait aller dans les services de soin,</span>
+            où il écoutait les histoires douloureuses et secourait au point de donner tout ce qu’il avait.</p>
+        <p>Il fit vœu entre les mains de Marie de suivre le Christ, Chemin Vérité Vie.</p>
+        <p><span style="font-weight: bold; color: black;">Dévoué pour les malades, il fut ordonné prêtre camillien le 14 avril 1889,</span>
+            par Mgr Joseph SARTO, futur pape Pie X. Il devint aumônier militaire de Vérone en 1891, puis aumônier de l’hôpital civil à Crémone.</p>
+        <p><span style="font-weight: bold; color: black;">
+            La charge pastorale des Filles de Saint Camille fut le premier service qu’on lui confia à Crémone. </span>
+            Il profitait fréquemment du privilège, concédé aux camilliens par le pape Pie X, de célébrer dans les chambres des malades. Il s’éteignit d’une broncho-pneumonie le 10 mai 1938.
+        </p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal8="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal8.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Mère Marie-Dominique BRUN BARBANTINI (1789-1868)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+            <img src="../../assets/images/gph_m_brun.jpg" height="250" class="rounded float-left" alt="img" style="margin-right: 3%;">
+        <p><span style="font-weight: bold; color: black;">La Mère Marie-Dominique BRUN BARBANTINI a été béatifiée par le pape Jean-Paul II, à Saint Pierre de Rome le 7 mai 1995.</span></p>
+        <p><span style="font-weight: bold; color: black;">Veuve confesseur après six mois de mariage, Marie Dominique prononce son vœu de chasteté pour se donner totalement à Dieu.</span></p>
+        <p>Elle fonde le 30 avril 1819 à Lucques la congrégation des sœurs de la charité.</p>
+        <p>A la mort de son fils âgé de huit ans elle fonde le monastère de la visitation de Marie en 1820.</p>
+        <p><span style="font-weight: bold; color: black;">En 1829, elle réunit les premières oblates infirmières pour l’assistance des femmes malades abandonnées.</span></p>
+        <p><span style="font-weight: bold; color: black;">En 1842, ces oblates dont elle est supérieure à vie, sont agrégées à l’Ordre de Saint Camille, sous le nom de Sœurs servantes des Malades de Saint Camille.</span>
+        </p>
+        <p>Depuis elles portent la croix rouge sur leur habit. <span style="font-weight: bold; color: black;">Son Institut est approuvé par le Saint Siège 10 ans plus tard. </span>
+        A rejoint la Maison du Père le 22 Mai 1868. La maladie et la mort de son mari et de son fils l’ont conduite à servir les malades.</p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal9="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal9Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal9.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Frère Bernardino Norcino (1525-1585)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+        <p><span style="font-weight: bold; color: black;">Né en 1525, il fut le premier compagnon de saint Camille.</span></p>
+        <p>Par son métier, simple porteur depuis son enfance, il travailla ensuite au vestiaire de l’Hôpital Saint Jacques de Rome : <span style="font-weight: bold; color: black;">c’est là qu’il se lia au Saint en 1582; </span>
+            il vécut seul avec lui pendant environ trois ans : il mourut le 16 août 1585.</p>
+        <p>Doué d’un haut esprit d’oraison, le sommeil venait souvent le gagner lorsqu’il était à genoux; il se réveillait dans cette position le matin, transi par le froid, avec le chapelet dans les mains.</p>
+        <p><span style="font-weight: bold; color: black;">Héroïque dans le pardon</span>, à celui qui le giflait, il présentait l’autre joue en disant : « <cite>Vous m’avez donné une gifle pour votre plaisir, je vous prie de m’en donner une autre pour mon plaisir à moi </cite>».
+            <span style="font-weight: bold; color: black;">Il eut le don de prophétie, des visions célestes et des révélations sur le mystère de la Très Sainte Trinité. </span>
+            Il fut enterré à Rome, dans l’église du Gésu. Saint Camille fit part de sa conviction que l’âme de son très vertueux premier compagnon avait pris son envol pour le Ciel sans faire étape au Purgatoire.
+        </p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal10="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal10Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal10.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Le Serviteur de Dieu Girolamo Tiraboschi (1733-1753)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+        <p><span style="font-weight: bold; color: black;">La cause pour sa béatification fut ouverte par l’Ordre camillien à Rome et par le diocèse de Crémone le 28 janvier 1891.</span></p>
+        <p>Le Serviteur de Dieu Girolamo Tiraboschi est né à Crémone le 23 septembre 1733.</p>
+        <p>Il a été élevé par les Jésuites à Mantoue et, pendant sept ans, par son frère don Alessandrino, curé de Mazzuolo (Matoue).</p>
+        <p>A dix-sept ans, en 1750, il entra, comme étudiant, au séminaire de Crémone. Après une année de séminaire, il confia à son frère qu’<span style="font-weight: bold; color: black;">il se sentait appelé à la vie consacrée, dans la famille des Serviteurs des Malades. </span>
+            Ce choix, pour lui, était « <cite>un acte de la plus nécessaire obéissance que je dois rendre à l’appel divin</cite> ».
+        </p>
+        <p><span style="font-weight: bold; color: black;">Il avait connu les camilliens à Mantoue où il avait été assisté spirituellement à l’hôpital de la ville. 
+            </span> Le 5 octobre 1752, il entra comme novice à la maison de Bologne où il se distingua par son esprit de prière continue, de discipline et régularité absolue de vie et par sa pureté angélique dans ses habitudes.
+        </p>
+        <p>Mais il ne put terminer les deux années de noviciat parce que, dix mois après, il mourait à Bologne, en odeur de sainteté, à vingt ans à peine, laissant consternés ses supérieurs et ses compagnons de formation.</p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div mdbModal #areaModal11="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myareaModal11Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="areaModal11.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Sr. Rosa Camilla Grimaldi (1708 – 1741)</h4>
+        </div>
+        <div class="modal-body" style="text-align: justify;">
+        <p>Camilla Rosa Grimaldi est la plus connue du petit groupe de tertiaires (on en connaît distinctement trois) qui se constitua au 18ème siècle à Bologne par les soins des Serviteurs des Malades locaux, inspiré par la charité de saint Camille.</p>
+        <p>Rosa Grimaldi est née à Bologne le 17 mars 1708. De famille aisée, elle connut une croissance un peu maladive. <span style="font-weight: bold; color: black;">Ses conditions de santé précaires qui déboucheront plus tard sur une tuberculose ne l’empêchaient pas d’alterner les prières et les jeûnes et pénitences.</span>
+        </p>
+        <p>En 1732, avec sa sœur, elle fréquenta l’église Saint Grégoire et les camilliens, se confiant à leur direction spirituelle.</p>
+        <p>C’est peut-être en 1740 que Rosa Grimaldi, qui continuait ses œuvres de charité et participait à l’église aux prières de la communauté camillienne, demanda à l’archevêque de Bologne, le cardinal Prospero Lambertini (le futur Benoît XIV, qui allait béatifier et canoniser saint Camille)<span style="font-weight: bold; color: black;"> de pouvoir revêtir l’habit de tertiaire camillienne et prononcer les vœux.</span>
+        </p>
+        <p>La cérémonie fut présidée solennellement par le cardinal lui-même dans l’église de Saint Grégoire.</p>
+        <p>Quelques mois après, le 2 août 1741, sœur Camilla Rosa Grimaldi comme elle voulait qu’on l’appelle, passa à une vie meilleure.</p>
+        <p>Le portrait qui fut fait d’elle porte la mention « <span style="font-weight: bold; color: black;">Camilla Rosa Maria Grimaldi, servante des malades</span> ».
+        </p>
+        <p>En 1887 fut ouvert le procès de béatification qui s’enlisa bientôt.</p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- zone de modaux -->

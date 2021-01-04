@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ang-test-proj": {
+    "mon-projet-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,20 +17,34 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ang-test-proj",
+            "outputPath": "dist/mon-projet-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
-              "src/favicon.ico",
+              "src/assets/insigne.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
+              "node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
+              "node_modules/animate.css/animate.css",
+              "./src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/hammerjs/hammer.min.js",
+              "./src/assets/js/faire-apparaitre-du-texte.js",
+              "./src/assets/js/parallax.js",
+              "./src/assets/js/album.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -45,6 +59,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -53,11 +68,6 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
                 }
               ]
             }
@@ -66,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ang-test-proj:build"
+            "browserTarget": "mon-projet-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ang-test-proj:build:production"
+              "browserTarget": "mon-projet-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ang-test-proj:build"
+            "browserTarget": "mon-projet-angular:build"
           }
         },
         "test": {
@@ -114,15 +124,23 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ang-test-proj:serve"
+            "devServerTarget": "mon-projet-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ang-test-proj:serve:production"
+              "devServerTarget": "mon-projet-angular:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "ang-test-proj"
+    }
+  },
+  "defaultProject": "mon-projet-angular",
+  "cli": {
+    "analytics": false
+  }
 }

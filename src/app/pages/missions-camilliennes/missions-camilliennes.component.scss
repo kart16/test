@@ -1,0 +1,122 @@
+
+.card-header {
+    border: none; 
+    background-color: transparent ;
+    color: darkblue; 
+    font-weight: bold; 
+    font-family: 'Times New Roman'; 
+    font-size: 115%; 
+    text-align: center;
+}
+
+.p-blockquote {
+    color: black; 
+    font-weight: bold; 
+    font-family: 'Times New Roman'; 
+    font-size: 120%; 
+    text-align: center;
+}
+
+.a-crollspy {
+    font-size: 120%;
+    font-weight: bold;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.h2-section {
+    color: red;
+    padding-bottom: 1%;
+    padding-top: 3%;
+    font-family: 'Times New Roman', Times, serif;  
+}
+
+p, li {
+    font-size: larger;
+    text-align: justify;
+    font-size: larger;
+}
+
+li>a {
+    color: rgb(4, 129, 255);
+}
+li>a:hover {
+    color: rgb(0, 91, 182);
+}
+  
+.open-button {
+    //background-color: #555;
+    background-color:white;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 60px;
+  }
+.open-button:hover {
+    opacity: 1;
+    background-color: sandybrown;
+    animation-name: none;
+}
+  
+.image-clignote  {
+    animation-duration: 2s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+}
+@keyframes clignoter {
+   0%   { opacity:1; }
+   40%   {opacity:0; }
+   100% { opacity:1; }
+}
+
+
+/**
+ * ZOOM IMAGE EFFECT ON HOVER // wpRock.fr
+ */
+ .wprock-img-zoom-hover .wprock-img-zoom {
+    overflow: hidden;
+    position: relative; 
+  }
+  .wprock-img-zoom-hover .wprock-img-zoom img {
+    max-width: 100%;
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  .wprock-img-zoom-hover .wprock-img-zoom * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .wprock-img-zoom-hover:hover .wprock-img-zoom img {
+    -moz-transform: scale(1.50);
+    -webkit-transform: scale(1.50);
+    transform: scale(1.50);
+  }
+
+  .btnImg{
+    width: 33%;
+    height: 5cm;
+    margin-top: 1px;
+    margin-right: 1px;
+    background: transparent; 
+    border: none;
+  }
+  
+  .btnImg > img {
+    width: 300px; 
+    height: 300px; 
+  }
+  
+  .imgIntoModal{
+    width: 45%; 
+    max-height: 700px; 
+  }

@@ -1,0 +1,8 @@
+.bg-img{
+    background-image:url("./assets/images/bg-home.jpg");    /* Insertion de l'image */
+    background-repeat : no-repeat ;                             /*permet de ne pas répéter L'image de fond */
+    background-attachment : fixed ;                             /* Le fond restera fixe */
+    background-position: center;                                /* pour la position de l'image on a top, right, left, bottom, center */
+    background-size: cover;                                     /* La taille de l'image */ 
+    
+}

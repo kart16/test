@@ -1,0 +1,76 @@
+
+.card-header {
+    border: none; 
+    background-color: transparent ;
+    color: darkblue; 
+    font-weight: bold; 
+    font-family: 'Times New Roman'; 
+    font-size: 115%; 
+    text-align: center;
+}
+
+.p-blockquote {
+    color: black; 
+    font-weight: bold; 
+    font-family: 'Times New Roman'; 
+    font-size: 120%; 
+    text-align: center;
+}
+
+.a-crollspy {
+    font-size: 120%;
+    font-weight: bold;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.h2-section {
+    color: red;
+    padding-bottom: 1%;
+    padding-top: 3%;
+    font-family: 'Times New Roman', Times, serif;  
+}
+
+.p-ng-template, li {
+    font-size: larger;
+    text-align: justify;
+}
+
+li>a {
+    color: rgb(4, 129, 255);
+}
+li>a:hover {
+    color: rgb(0, 91, 182);
+}
+
+  
+.open-button {
+    //background-color: #555;
+    background-color:white;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 60px;
+  }
+.open-button:hover {
+    opacity: 1;
+    background-color: sandybrown;
+    animation-name: none;
+}
+  
+.image-clignote  {
+    animation-duration: 2s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+}
+@keyframes clignoter {
+   0%   { opacity:1; }
+   40%   {opacity:0; }
+   100% { opacity:1; }
+}

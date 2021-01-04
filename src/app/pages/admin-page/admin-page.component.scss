@@ -1,0 +1,161 @@
+.navStyle:hover{
+    color: orange;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/**************************************************** Actualités ***************************************************/
+
+.purple-border textarea {
+  border: 1px solid #ba68c8;
+}
+.purple-border .form-control:focus {
+  border: 1px solid #ba68c8;
+  box-shadow: 0 0 0 0.2rem rgba(186, 104, 200, .25);
+}
+
+.green-border-focus .form-control:focus {
+  border: 1px solid #8bc34a;
+  box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
+}
+
+//*******************************************  TEXT MESSAGE NEWSLETTER *********************************************/
+.btnImg{
+  width: 15%;
+  height: 5cm;
+  margin-top: 1px;
+  margin-right: 0.5px;
+  background: transparent; 
+  border: none;
+}
+
+.btnImg > img {
+  width: 100px; 
+  height: 100px; 
+}
+
+.imgIntoModal{
+  width: 45%; 
+  max-height: 700px; 
+}
+
+
+/**
+ * ZOOM IMAGE EFFECT ON HOVER // wpRock.fr
+ */
+ .wprock-img-zoom-hover .wprock-img-zoom {
+  overflow: hidden;
+  position: relative; 
+}
+.wprock-img-zoom-hover .wprock-img-zoom img {
+  max-width: 100%;
+  -moz-transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+.wprock-img-zoom-hover .wprock-img-zoom * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wprock-img-zoom-hover:hover .wprock-img-zoom img {
+  -moz-transform: scale(1.50);
+  -webkit-transform: scale(1.50);
+  transform: scale(1.50);
+}
