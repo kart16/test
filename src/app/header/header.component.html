@@ -29,29 +29,30 @@
             </li>
 
             <!-- Dropdown -->
-            <li class="nav-item dropdown" dropdown>
-              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                QUI SOMMES-NOUS ?<span class="caret"></span></a>
-                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                  <a routerLink="st-camille-qui-es-tu" class="dropdown-item waves-light" mdbWavesEffect>Saint Camille qui est-tu ?</a>
-                  <a routerLink="des-religieux-au-service-des-malades" class="dropdown-item waves-light" mdbWavesEffect>Des religieux au service <br>des malades</a>
-                  <a routerLink="nos-communautes" class="dropdown-item waves-light" mdbWavesEffect>Nos communautés</a>
-                  <div class="divider dropdown-divider"></div>
-                  <a routerLink="/faire-un-don" class="dropdown-item waves-light" mdbWavesEffect>Comment nous aider ?</a>
-                </div>
-              </li>
               
               <li class="nav-item dropdown" dropdown>
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
                   NOTRE APOSTOLAT<span class="caret"></span></a>
                   <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a routerLink="les-aumoneries" class="dropdown-item waves-light" mdbWavesEffect >Les aumôneries</a>
+                    <a routerLink="aumoneries" class="dropdown-item waves-light" mdbWavesEffect >Les aumôneries</a>
                     <a routerLink="choisir-la-vie-consacree" class="dropdown-item waves-light" mdbWavesEffect >Choisir la vie consacrée</a>
                     <div class="divider dropdown-divider"></div>
                     <a routerLink="aller-plus-loin" class="dropdown-item waves-light" mdbWavesEffect >Aller plus loin</a>
-                    <a routerLink="nos-ouvrages" class="dropdown-item waves-light" mdbWavesEffect >Nos ouvrages</a>
+                    <a routerLink="livres" class="dropdown-item waves-light" mdbWavesEffect >Nos ouvrages</a>
                   </div>
                 </li>
+
+                <li class="nav-item dropdown" dropdown>
+                  <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                    QUI SOMMES-NOUS ?<span class="caret"></span></a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                      <a routerLink="st-camille-qui-es-tu" class="dropdown-item waves-light" mdbWavesEffect>Saint Camille qui est-tu ?</a>
+                      <a routerLink="des-religieux-au-service-des-malades" class="dropdown-item waves-light" mdbWavesEffect>Des religieux au service <br>des malades</a>
+                      <a routerLink="nos-communautes" class="dropdown-item waves-light" mdbWavesEffect>Nos communautés</a>
+                      <div class="divider dropdown-divider"></div>
+                      <a [routerLink]="'faire-un-don'" class="dropdown-item waves-light" mdbWavesEffect>Comment nous aider ?</a>
+                    </div>
+                  </li>
 
               <li class="nav-item">
                 <a routerLink="famille-camillienne-de-france" class="nav-link waves-light" mdbWavesEffect>LA FAMILLE CAMILLIENNE LAIQUE<span class="sr-only">(current)</span></a>
@@ -62,7 +63,7 @@
               </li>
 
               <li class="nav-item">
-                <a routerLink="les-fraternites-st-camille" class="nav-link waves-light" mdbWavesEffect>LES FRATERNITES St. CAMILLE<span class="sr-only">(current)</span></a>
+                <a routerLink="fraternites-st-camille" class="nav-link waves-light" mdbWavesEffect>LES FRATERNITES St. CAMILLE<span class="sr-only">(current)</span></a>
               </li>
                 
                 <li class="nav-item">

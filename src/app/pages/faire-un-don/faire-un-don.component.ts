@@ -45,7 +45,7 @@ export class FaireUnDonComponent implements OnInit {
   public payPalConfig?: IPayPalConfig;
 
     ngOnInit(): void {
-      this.initConfig();
+      //this.initConfig();
     }
 
     private initConfig(): void {

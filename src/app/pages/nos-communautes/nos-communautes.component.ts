@@ -132,11 +132,9 @@ export class NosCommunautesComponent implements OnInit {
   ngOnDestroy() {
     if(this.albumNameSubcription){
       this.albumNameSubcription.unsubscribe();
-      this.router.navigate(['/home']); 
     }
     else if(this.albumSubscription){
       this.albumSubscription.unsubscribe();
-      this.router.navigate(['/home']); 
     }
   }
 

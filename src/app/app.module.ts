@@ -8,7 +8,6 @@ import { FaireUnDonComponent } from './pages/faire-un-don/faire-un-don.component
 import { Routes, RouterModule } from '@angular/router';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { PrayerService } from './Services/prayer.service';
 import {FileService} from './Services/file.service';
 import {SubscriberService} from './Services/subscriber.service';
@@ -40,21 +39,19 @@ const appRoutes: Routes = [
 
   { path: 'adminPage', canActivate: [AuthGuardService], component: AdminPageComponent},
   { path: 'adminPage/view/:id', canActivate: [AuthGuardService], component: GalerieComponent},
-
-  { path: 'faire-un-don', component: FaireUnDonComponent },
-  { path: 'qui-sommes-nous', component: QuiSommesNousComponent },
+  
+  { path: 'livres', component: NosOuvragesComponent},
+  { path: 'nos-communautes', component: NosCommunautesComponent},
   { path: 'st-camille-qui-es-tu', component: StCamQuiEsTuComponent },
+  { path: 'des-religieux-au-service-des-malades', component: DesReligServMaladComponent},
+  { path: 'faire-un-don', component: FaireUnDonComponent },
   { path: 'famille-camillienne-de-france', component: FamilleCamillienneFranceComponent},
   { path: 'choisir-la-vie-consacree', component: ChoisirLaVieConsacreeComponent},
-  { path: 'des-religieux-au-service-des-malades', component: DesReligServMaladComponent},
-  { path: 'home', component: HomeComponent },
-  { path: 'adminPage', canActivate: [AuthGuardService], component: AdminPageComponent},
-  { path: 'nos-communautes', component: NosCommunautesComponent},
-  { path: 'les-fraternites-st-camille', component: LesFraternitesStCamilleComponent},
+  { path: 'fraternites-st-camille', component: LesFraternitesStCamilleComponent},
   { path: 'missions-camilliennes', component: MissionsCamilliennesComponent},
-  { path: 'les-aumoneries', component: AumoneriesComponent},
+  { path: 'aumoneries', component: AumoneriesComponent},
   { path: 'aller-plus-loin', component: AllerPlusLoinComponent},
-  { path: 'nos-ouvrages', component: NosOuvragesComponent},
+  { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' }
 ];
@@ -64,7 +61,6 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     FaireUnDonComponent,
-    QuiSommesNousComponent,
     HeaderComponent,
     FooterComponent,
     AdminPageComponent,
