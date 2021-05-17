@@ -38,9 +38,7 @@ export class PrayerService {
       .subscribe(
         () => {
             console.log('Enregistrement terminé !');
-            this.prayers.push(prayer);
-            //console.log( this.prayers);
-            this.emitPrayers();
+            this.getPrayers();
           },
           (error) => {
             console.log('Erreur ! : ' + error);

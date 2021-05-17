@@ -13,6 +13,8 @@ import { AlbumService } from 'src/app/Services/album.service';
 import { EmailService } from 'src/app/Services/email.service';
 import { Communication } from 'src/app/models/communication.model';
 import { CommunicationService } from 'src/app/Services/communication.service';
+import { NewsService } from 'src/app/Services/news.service';
+import { News } from 'src/app/models/news.model';
 
 @Component({
   selector: 'app-admin-page',
@@ -25,7 +27,8 @@ export class AdminPageComponent implements OnInit {
   fileSubscription: Subscription;
   albumNameSubcription: Subscription;
   albumSubscription: Subscription;
-  commSubscription: Subscription;
+  commSubscription: Subscription; 
+  newsSubscription: Subscription;
 
   prayer: any[];
   filesReq:File[];
@@ -36,10 +39,13 @@ export class AdminPageComponent implements OnInit {
   identifiant:number;
   fileId: number;
   actifLink: number = 1;
+
   uploadForm: FormGroup;
   uploadPhoto: FormGroup;
   emailForm: FormGroup;
   comForm:FormGroup;
+  newForm: FormGroup;
+
   newDate: Date = new Date();
   fileTab: string[] = [];
   fileToUpload: File[] = [];// = new File();
@@ -67,6 +73,13 @@ export class AdminPageComponent implements OnInit {
   numeros:number []= [1,2,3,4];
   communication: Communication = new Communication("","");
   commun:Communication[]=[];
+  comId: number;
+  singleCom: Communication = new Communication("","");
+  comContent: string = "";
+
+  news: News[] = [];
+  newToSend: News = new News("");
+  newCt: string = "";
 
   constructor(private prayerService: PrayerService,
               private router: Router,
@@ -74,6 +87,7 @@ export class AdminPageComponent implements OnInit {
               private fileService: FileService,
               private albumService: AlbumService,
               private emailService: EmailService,
+              private newsService: NewsService,
               private comService: CommunicationService) { }
 
   ngOnInit() {
@@ -105,6 +119,13 @@ export class AdminPageComponent implements OnInit {
     );
     this.comService.getCommunications();
 
+    this.newsSubscription = this.newsService.newsSubject.subscribe(
+      (news:News[]) =>{
+        this.news = news;
+      }
+    );
+    this.newsService.getNews();
+
     this.initForm();
 
     this.initPhotoForm();
@@ -112,6 +133,8 @@ export class AdminPageComponent implements OnInit {
     this.initEmailForm();
 
     this.initCommForm();
+
+    this.initNewsForm();
   }
 
   fct(){
@@ -149,6 +172,13 @@ export class AdminPageComponent implements OnInit {
     this.uploadPhoto = this.formBuilder.group({
       photo: ['', Validators.required]
     });
+  }
+
+  cleanInput(){
+    this.isdetect = false;
+    for(var i=0;i<this.imageName.length;i++){
+      this.imageName[i] ="";
+    }
   }
 
   detectPhoto(event) {
@@ -196,16 +226,44 @@ export class AdminPageComponent implements OnInit {
 
   initCommForm(){
     this.comForm = this.formBuilder.group({
+      eventdate: ['',Validators.required],
       title: ['', Validators.required],
       content: ['', Validators.required]
     });
   }
 
   sendCom(){
+    this.communication.eventDate = this.comForm.get('eventdate').value;
     this.communication.title = this.comForm.get('title').value;
     this.communication.content = this.comForm.get('content').value; 
 
     this.comService.saveCommunication(this.communication);
+
+    this.actifLink=1;
+  }
+
+  initNewsForm(){
+    this.newForm = this.formBuilder.group({
+      content: ['', Validators.required]
+    });
+  }
+
+  sendNews(){
+    this.newToSend.content = this.newForm.get('content').value;
+    this.newsService.saveNews(this.newToSend);
+
+    this.actifLink=1;
+  }
+
+  getNewsId(i:number){
+    const id = i;
+    this.newCt = this.news[i].content;
+  }
+
+  deletNews(i:number){
+    const id = i;
+    this.newsService.removeNews(id);
+    location.reload();
 
     this.actifLink=1;
   }
@@ -238,16 +296,19 @@ export class AdminPageComponent implements OnInit {
       this.actifLink=3;
     if(n===4)
       this.actifLink=4;
+    if(n===5)
+      this.actifLink=5;
   }
 
   onDeletePrayer(res:string){
     if(res==="yes"){
       this.prayerService.removePrayer(this.identifiant);
+      location.reload();
     }
   }
   
   getId(id:number){
-    const ident = id+1;
+    const ident = id;
     this.identifiant=ident;
   }
 
@@ -293,6 +354,12 @@ export class AdminPageComponent implements OnInit {
       this.getAlbum(this.album);
 
     }
+    else if(num==4){
+      this.isAlbum= true;
+      this.album = this.albumNames[3];
+      this.getAlbum(this.album);
+
+    }
   }
 
   getIndex2(i){
@@ -325,6 +392,34 @@ export class AdminPageComponent implements OnInit {
     this.prayerService.updatePrayer(p);
   }
 
+  getCommId(i:number){
+    const id = i;
+    this.comId = id;
+  }
+  
+  getSingleComm(i:number){
+    const id = i;
+    this.comService.getSingleCommunication(id).then(
+      (com:Communication)=>{
+        this.singleCom = com;
+        this.comContent = this.singleCom.content;
+      },(error)=>{
+        console.log(error);
+      }
+    )
+  }
+
+  updateComm(){
+    this.singleCom.content = this.comContent;
+    this.comService.updateCommunication(this.singleCom);
+  }
+
+  onDeleteActuality(res:string){
+      if(res==="yes"){
+        this.comService.removeCommunication(this.comId);
+      }
+  }
+
   ngOnDestroy() {
     if(this.prayersSubscription){
       this.prayersSubscription.unsubscribe();
@@ -339,6 +434,12 @@ export class AdminPageComponent implements OnInit {
     else if(this.albumSubscription){
       this.albumSubscription.unsubscribe();
       this.router.navigate(['/home']); 
+
+    }else if(this.commSubscription){
+      this.commSubscription.unsubscribe();
+
+    }else if(this.newsSubscription){
+      this.newsSubscription.unsubscribe(); 
     }
 
   }

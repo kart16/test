@@ -1,32 +1,95 @@
 <div class="container">
+    <h2 style="color: darkred; text-align: center;">PAGE D'ADMINISTRATION</h2> <br>
 
     <div class="row">
 
-        <div class="col-3" style="margin-top:1cm; margin-bottom: 1cm;">
+        <div class="col-sm-12 col-lg-3 col-md-3 col-xs-12">
           <hr>
-          <a routerLink="/adminPage" (click)="linkActif(1)" class="navStyle"><h5><i class="fas fa-angle-right pr-3"></i>Album</h5></a>
-          <a routerLink="/adminPage" (click)="linkActif(2)" class="navStyle"><h5><i class="fas fa-angle-right pr-3"></i>Bulletin</h5></a>
-          <a routerLink="/adminPage" (click)="linkActif(3)" class="navStyle"><h5><i class="fas fa-angle-right pr-3"></i>Newsletter</h5></a>
-          <a routerLink="/adminPage" (click)="linkActif(4)" class="navStyle"><h5><i class="fas fa-angle-right pr-3"></i>Actualités</h5></a>
+          <a routerLink="/adminPage" (click)="linkActif(1)" class="navStyle"><h4><i class="fas fa-angle-right pr-2"></i>Albums</h4></a>
+          <a routerLink="/adminPage" (click)="linkActif(2)" class="navStyle"><h4><i class="fas fa-angle-right pr-2"></i>Bulletins</h4></a>
+          <a routerLink="/adminPage" (click)="linkActif(3)" class="navStyle"><h4><i class="fas fa-angle-right pr-2"></i>Newsletter</h4></a>
+          <a routerLink="/adminPage" (click)="linkActif(4)" class="navStyle"><h4><i class="fas fa-angle-right pr-2"></i>Actualités</h4></a>
+          <a routerLink="/adminPage" (click)="linkActif(5)" class="navStyle"><h4><i class="fas fa-angle-right pr-2"></i>Informations</h4></a>
         </div>
 
-        <div class="col-9" style="margin-top:1cm; margin-bottom: 1cm;">
+        <div class="col-sm-12 col-lg-9 col-md-9 col-xs-12">
             <hr>
+
+
+            <!-------------------------------- INFORMATIONS -------------------------->
+
+            <div *ngIf="actifLink===5">
+                <div>
+                    <h2><b><i class="fas fa-info-circle pr-3"></i>Informations</b></h2><br>
+
+                    <form [formGroup]="newForm" (ngSubmit)="sendNews()">
+
+                        <div class="form-group green-border-focus">
+                            <label style="font-size: larger;">Saisissez ici votre information à faire passer</label>
+                            <textarea style="font-size: larger;" type="text" class="form-control" id="exampleFormControlTextarea5" rows="3" placeholder="votre information..."
+                                      mdbInput mdbValidate formControlName="content"></textarea>
+    
+                            <button type="submit" class="btn btn-info" style="margin-left: 0%; margin-top: 0.5cm;"
+                                    [disabled]="newForm.invalid" (click)="centralModalSuccessNew.show()">
+                                    <i class="fas fa-paper-plane pr-3"></i>Publier
+                            </button>
+    
+                        </div>
+    
+                    </form>
+
+                    <div style="margin-top: 1cm;">
+                        <h3><b>Historique</b></h3>
+                        <table class="table table-hover table-fixed">
+    
+                            <!--Table head-->
+                            <thead>
+                                <tr style="background-color: cornflowerblue;">
+                                    <th>#</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <!--Table head-->
+                        
+                            <!--Table body-->
+                            <tbody style="cursor: pointer;" *ngFor="let new of news; let i = index">
+                                <tr >
+                                    <th scope="row">{{new.id}}</th>
+                                    <td>
+                                        <button type="button" class="btn btn-secondary btn-sm" (click)="getNewsId(i)" 
+                                                                                               (click)="sideModalNews.show()">
+                                            <i class="fas fa-eye pr-2"></i> Aperçu
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-sm" style="padding-left: 8%; " (click)="deletNews(new.id)">
+                                            <i class="fas fa-trash pr-2"></i>Supprimer
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!--Table body-->
+                        
+                        </table>
+                        <!--Table-->
+                    </div>
+    
+                </div>
+            </div>
 
             <!---------------------------------   Album ------------------------------>
 
             <div *ngIf="actifLink===1">
                 <div>
-                    <h2 style="display:inline;"><b>Album</b></h2><br>
-                    <button type="button" class="btn btn-primary" style="float:right;" (click)=albumSelect(1)>Communauté de Lyon</button>
-                    <button type="button" class="btn btn-primary" style="float:right;" (click)=albumSelect(2)>Famille Camillienne</button>
-                    <button type="button" class="btn btn-primary" style="float:right;" (click)=albumSelect(3)>Missions camiliennes</button>
+                    <h2 style="display:inline;"><b><i class="fas fa-image pr-3"></i>Albums</b></h2><br>
+                    <button type="button" class="btn btn-primary" style="float:left;margin-left: 20%;" (click)=albumSelect(1)>Communauté de Bry</button>
+                    <button type="button" class="btn btn-primary" style="float:left;margin-left: 20%" (click)=albumSelect(2)>Communauté de Lyon</button>
+                    <button type="button" class="btn btn-primary" style="float:left;margin-left: 20%" (click)=albumSelect(3)>Famille Camillienne</button>
+                    <button type="button" class="btn btn-primary" style="float:left;margin-left: 20%" (click)=albumSelect(4)>Missions Camiliennes</button>
                 </div>
                 
 
-                <div style="margin-top:2cm;" *ngIf="isAlbum">
-                            
-                    <h4>{{album}}</h4>
+                <div style="padding-top: 10%;" *ngIf="isAlbum">
+                    <br><br><br>       
+                    <h4 style="display:inline-block;">{{album}}</h4>
 
                     <form [formGroup]="uploadPhoto" (ngSubmit)="uploadImage()">
                         <div class="input-group mb-3">
@@ -37,25 +100,27 @@
     
                             <div class="custom-file">
                               <input type="file" class="custom-file-input form-control" id="inputGroupFile01" 
-                                     (change)="detectPhoto($event)" formControlName="photo" multiple>
+                                     (change)="detectPhoto($event)" (click)="cleanInput()" mdbInput mdbValidate formControlName="photo" multiple>
                               <label class="custom-file-label" for="inputGroupFile01" *ngIf="!isdetect">chosir une image...</label>
                               <label class="custom-file-label" for="inputGroupFile01" *ngIf="isdetect">{{imageName}}</label>
                             </div>
                             
                         </div>
-                        <button type="submit" class="btn btn-primary" [disabled]="uploadPhoto.invalid">
+                        <button type="submit" class="btn btn-primary" [disabled]="uploadPhoto.invalid"
+                                              (click)="cleanInput()"  
+                                              (click)="addImgModalSuccess.show()">
                             <i class="fas fa-upload pr-3"></i>Ok
                         </button>
                     </form>
 
                 </div>
 
-                <div *ngIf="isAlbum" style="margin-top:1cm;">
+                <div *ngIf="isAlbum" style="margin-top:1%;">
                     <button type="button" class="btn btn-primary" style="float:left;" (click)=printList()>Liste des photos</button>
-                    <button type="button" class="btn btn-primary" style="float: right;" (click)=notPrintList()>Cacher la liste</button>
+                    <button type="button" class="btn btn-primary" style="float: right;" (click)=notPrintList()>Cacher</button>
                 </div>
 
-                <div style="margin-top:3cm;" *ngIf="isList">
+                <div style="margin-top:3%;" *ngIf="isList">
                             <!--Table-->
                     <table class="table table-hover table-fixed">
 
@@ -63,7 +128,7 @@
                         <thead>
                             <tr style="background-color: cornflowerblue;">
                                 <th>#</th>
-                                <th>Name</th>
+                                <th>Nom</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -72,9 +137,9 @@
                         <!--Table body-->
                         <tbody style="cursor: pointer;" *ngFor="let photo of albumm.albumphotos; let i = index;">
                             <tr >
-                                <th scope="row">{{i}}</th>
-                                <td>{{photo.name}}</td>
-                                <td>
+                                <th scope="row">{{i+1}}</th>
+                                <td style="width: fit-content;">{{photo.name}}<br></td>
+                                <td style="padding-left: 10%;">
                                     <button type="button" class="btn btn-secondary btn-sm" 
                                             (click)="modalImageViewer.show()"
                                             (click)="getIndex2(i)">
@@ -118,8 +183,8 @@
 
             <div *ngIf="actifLink===2">
                 <div >
-                    <h2 style="display:inline;"><b>Bulletin</b></h2>
-                    <button type="button" style="float:right;" (click)="modalPush.show()">
+                    <h2 style="display:inline;"><b><i class="fas fa-file-alt pr-3"></i>Bulletin</b></h2>
+                    <button type="button" style="float:right; font-size: x-large;" (click)="modalPush.show()">
                         <i class="fas fa-upload pr-3"></i>nouveau bulletin
                     </button>
                 </div>
@@ -152,9 +217,10 @@
                                   <h4 style="color: black; font-weight: bold;">{{bulletin.name}}</h4>
                                 </mdb-card-title>
                           
+                                
                                 <!--Text-->
                                 <mdb-card-text> 
-                                    publié le: {{bulletin.date| date: 'dd-MM-yyyy'}}
+                                    publié le: {{bulletin.uploadDate| date: 'dd-MM-yyyy'}}
                                 </mdb-card-text>
                           
                                 <!--<a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>-->
@@ -171,7 +237,7 @@
                                   <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
                                     <span aria-hidden="true">×</span>
                                   </button>
-                                  <h4 class="modal-title w-100" id="myModalLabel">bulletin {{bulletin}}</h4>
+                                  <h4 class="modal-title w-100" id="myModalLabel">{{bulletin.name}}</h4>
                                 </div>
                                 <div class="modal-body">
                                   <pdf-viewer src={{bulletin.location}} 
@@ -199,7 +265,7 @@
 
             <!---------------------------------   News Letters ------------------------------>
             <div *ngIf="actifLink===3">
-                <h2><b>NewsLetter</b></h2>
+                <h2><b><i class="far fa-newspaper pr-3"></i> NewsLetter</b></h2>
                 <div>
                     <div style="background-color: rgb(129, 129, 129); padding: 10px;margin-top: 0.5cm;">
                         <h4 style="text-align: center;">Nouveau Message</h4>
@@ -249,20 +315,22 @@
             <!-------------------------------------------- ACTUALITES --------------------------------------->
 
             <div *ngIf="actifLink===4">
-                <h2><b>Actualités</b></h2><br>
+                <h2><b><i class="fas fa-scroll pr-3"></i>Actualités</b></h2><br>
 
                 <form [formGroup]="comForm" (ngSubmit)="sendCom()">
 
                     <div class="form-group green-border-focus">
-                        
-                        <input class="form-control form-control-sm" type="text" placeholder="Titre"
+                        <label style="font-size: larger;"><i class="fas fa-exclamation-triangle fa-2x red-text pr-3"></i> Il s'agit ici de la date de l'évènement</label>
+                        <input style="font-size: larger;" type="date" id="date" class="form-control" mdbInput mdbValidate formControlName="eventdate"><br>
+
+                        <input style="font-size: larger;" class="form-control form-control-sm" type="text" placeholder="Titre"
                                mdbInput mdbValidate formControlName="title"><br>
 
-                        <textarea type="text" class="form-control" id="exampleFormControlTextarea5" rows="3" placeholder="votre actualité..."
+                        <textarea style="font-size: larger;" type="text" class="form-control" id="exampleFormControlTextarea5" rows="3" placeholder="votre actualité..."
                                   mdbInput mdbValidate formControlName="content"></textarea>
 
                         <button type="submit" class="btn btn-info" style="margin-left: 0%; margin-top: 0.5cm;"
-                                [disabled]="comForm.invalid" (click)="centralModalSuccess.show()">
+                                [disabled]="comForm.invalid" (click)="centralModalSuccessActual.show()">
                                 <i class="fas fa-paper-plane pr-3"></i>Publier
                         </button>
 
@@ -270,8 +338,8 @@
 
                 </form>
 
-                <div style="margin-top: 1cm;">
-                    <h3><b>Historiques</b></h3>
+                <div style="margin-top: 1%;">
+                    <h3><b>Historique</b></h3>
                     <table class="table table-hover table-fixed">
 
                         <!--Table head-->
@@ -288,14 +356,18 @@
                         <!--Table body-->
                         <tbody style="cursor: pointer;" *ngFor="let c of commun; let i = index">
                             <tr >
-                                <th scope="row">{{c.id}}</th>
+                                <th scope="row">{{i+1}}</th>
                                 <td>{{c.title}}</td>
-                                <td>{{c.date}}</td>
+                                <td>{{c.date| date: 'dd-MM-yyyy'}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-secondary btn-sm">
+                                    <button type="button" class="btn btn-secondary btn-sm" style="padding-left: 8%; padding-right: 8%;"
+                                                          (click)="getSingleComm(c.id)"
+                                                          (click)="sideModalTRCom.show()">
                                         <i class="fas fa-pen pr-2"></i>modif
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm">
+                                    <button type="button" class="btn btn-danger btn-sm" style="padding-left: 8%; padding-right: 8%;"
+                                                          (click)="getCommId(c.id)"
+                                                          (click)="modalConfirmDeleteAtuality.show()">
                                         <i class="fas fa-trash pr-2"></i>supp
                                     </button>
                                 </td>
@@ -336,7 +408,7 @@
             <!--Table body-->
             <tbody style="cursor: pointer;" *ngFor="let p of prayer; let i = index">
                 <tr >
-                    <th scope="row">{{p.id}}</th>
+                    <th scope="row">{{i+1}}</th>
                     <td>Intention de prière envoyée par <b>{{p.name}}</b></td>
                     <td>{{p.date | date: 'dd-MM-yyyy hh:mm:ss'}}</td>
                     <td>
@@ -346,7 +418,7 @@
                             <i class="fas fa-pen pr-2"></i>modif
                         </button>
                         <button type="button" class="btn btn-danger btn-sm"
-                                              (click)="getId(i)"
+                                              (click)="getId(p.id)"
                                               (click)="modalConfirmDelete.show()">
                             <i class="fas fa-trash pr-2"></i>supp
                         </button>
@@ -409,6 +481,122 @@
 
       </div>
     </div>
+    <!-- Central Modal Medium Success -->
+
+
+    <!-- Central Modal Medium Success: COMMUNICATION -->
+    <div mdbModal #centralModalSuccessActual="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+    <div class="modal-dialog modal-notify modal-success" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <p class="heading lead">Actualité</p>
+          
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" 
+                                              (click)="centralModalSuccessActual.hide()">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+
+        <!--Body-->
+        <div class="modal-body">
+          <div class="text-center">
+            <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+            <h2>Actualité publiée avec succès</h2>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" class="btn btn-outline-success waves-effect" 
+                           data-dismiss="modal" 
+                           (click)="centralModalSuccessActual.hide()">OK</a>
+        </div>
+      </div>
+      <!--/.Content-->
+
+      </div>
+    </div>
+    <!-- Central Modal Medium Success: COMMUNICATION -->
+
+
+    <!-- Central Modal Medium Success: Information -->
+    <div mdbModal #centralModalSuccessNew="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+    <div class="modal-dialog modal-notify modal-success" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <p class="heading lead">Information</p>
+          
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" 
+                                              (click)="centralModalSuccessNew.hide()">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+
+        <!--Body-->
+        <div class="modal-body">
+          <div class="text-center">
+            <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+            <h2>Information publiée avec succès</h2>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" class="btn btn-outline-success waves-effect" 
+                           data-dismiss="modal" 
+                           (click)="centralModalSuccessNew.hide()">OK</a>
+        </div>
+      </div>
+      <!--/.Content-->
+
+      </div>
+    </div>
+    <!-- Central Modal Medium Success: Information -->
+
+
+    <div mdbModal #addImgModalSuccess="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+   <div class="modal-dialog modal-notify modal-success" role="document">
+     <!--Content-->
+     <div class="modal-content">
+       <!--Header-->
+       <div class="modal-header">
+         <p class="heading lead">Email Envoyée</p>
+         
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close" 
+                                             (click)="centralModalSuccess.hide()">
+           <span aria-hidden="true" class="white-text">&times;</span>
+         </button>
+       </div>
+
+       <!--Body-->
+       <div class="modal-body">
+         <div class="text-center">
+           <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+           <h2>Photo(s) rajoutée(s) avec succès</h2>
+         </div>
+       </div>
+
+       <!--Footer-->
+       <div class="modal-footer justify-content-center">
+         <a type="button" class="btn btn-outline-success waves-effect" 
+                          data-dismiss="modal" 
+                          (click)="addImgModalSuccess.hide()">OK</a>
+       </div>
+     </div>
+     <!--/.Content-->
+
+     </div>
+   </div>
  
     
 
@@ -432,15 +620,46 @@
                 <!--Footer-->
                 <div class="modal-footer flex-center">
                     <a type="button" class="btn  btn-outline-danger" (click)="onDeletePrayer('yes')"
-                                                                     (click)="modalConfirmDelete.hide()">Yes</a>
+                                                                     (click)="modalConfirmDelete.hide()">Oui</a>
                     <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal"
-                                                                               (click)="modalConfirmDelete.hide()">No</a>
+                                                                               (click)="modalConfirmDelete.hide()">Non</a>
                 </div>
             </div>
           <!--/.Content-->
           </div>
         </div>
         <!--Modal: modalConfirmDelete-->
+
+
+        <!--Modal: modalConfirmDeleteActual-->
+        <div mdbModal #modalConfirmDeleteAtuality="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+            <!--Content-->
+                <div class="modal-content text-center">
+                <!--Header-->
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="heading">Are you sure?</p>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+
+                    <i class="fas fa-times fa-4x animated rotateIn"></i>
+
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer flex-center">
+                    <a type="button" class="btn  btn-outline-danger" (click)="onDeleteActuality('yes')"
+                                                                     (click)="modalConfirmDeleteAtuality.hide()">Oui</a>
+                    <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal"
+                                                                               (click)="modalConfirmDeleteAtuality.hide()">Non</a>
+                </div>
+            </div>
+          <!--/.Content-->
+          </div>
+        </div>
+        <!--Modal: modalConfirmDeleteActual-->
 
 
         <!--Modal: modalConfirmDelete-->
@@ -463,9 +682,9 @@
                 <!--Footer-->
                 <div class="modal-footer flex-center">
                     <a type="button" class="btn  btn-outline-danger" (click)="onDeleteFile('yes')"
-                                                                     (click)="modalConfirmDeleteFile.hide()">Yes</a>
+                                                                     (click)="modalConfirmDeleteFile.hide()">Oui</a>
                     <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal"
-                                                                               (click)="modalConfirmDeleteFile.hide()">No</a>
+                                                                               (click)="modalConfirmDeleteFile.hide()">Non</a>
                 </div>
             </div>
           <!--/.Content-->
@@ -477,7 +696,6 @@
     </div>
 
      <!-- Side Modal Top Right -->
-
      <div mdbModal #sideModalTR="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-side modal-top-right modal-notify modal-info" role="document">
             <!--Content-->
@@ -510,6 +728,42 @@
         </div>
     </div>
     <!-- Side Modal Top Right -->
+
+
+    <!-- Side Modal Top Right : COMMUNICATION -->
+    <div mdbModal #sideModalTRCom="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-side modal-top-right modal-notify modal-info" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Actualité</h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="sideModalTRCom.hide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                <div class="text-center">
+                    <textarea type="text" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="10" mdbInput mdbValidate
+                    [(ngModel)]="comContent"></textarea>
+                </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="sideModalTRCom.hide()" 
+                                                                    (click)="updateComm()">
+                        <i class="fas fa-pen pr-2"></i>Modifier
+                    </button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Side Modal Top Right: COMMUNICATION -->
 
 
     <!--Modal: modalPush-->
@@ -548,7 +802,7 @@
                                                         [disabled]="uploadForm.invalid"
                                                         (click)="modalPush.hide()">Publier</button>
                             <a type="button" class="btn btn-outline-info waves-effect" 
-                                            data-dismiss="modal" (click)="modalPush.hide()">No</a>
+                                            data-dismiss="modal" (click)="modalPush.hide()">Non</a>
                         </div>
 
                     </div>
@@ -560,5 +814,39 @@
         </div>
     </div>
     <!--Modal: modalPush-->
+
+
+    <!-- Side Modal Top Right FOR NEWS-->
+    <div mdbModal #sideModalNews="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-side modal-top-right modal-notify modal-info" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Aperçu</h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="sideModalNews.hide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                            <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="5">
+                                {{newCt}}
+                            </textarea>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="sideModalNews.hide()">fermer</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Side Modal Top Right FOR NEWS-->
 
 </div>

@@ -11,7 +11,7 @@
                     engagés à témoigner l’amour du Christ Jésus envers les malade et les marginalisés, s’empressent de les servir avec un amour de mère, selon l’exemple du Fondateur.
                 </p>
                 
-                <img src="assets/images/ph_mission1.jpg" class="rounded float-right" height="35%" width="35%" alt="img-fluid" style="margin-left: 3%;">
+                             <img src="assets/images/ph_mission1.jpg" class="rounded float-right" height="35%" width="35%" alt="img-fluid" style="margin-left: 3%;">
                 <p>Ils consacrent de préférence leurs activités aux plus abandonnés, <span style="font-weight: bold; color: black">particulièrement dans les pays en voie de développement et dans les terres de mission.</span></p>
                 <p>Avec les laïcs, réunis en forme associative et selon leur propre condition de laïcs (Famille camillienne laïque), <span style="font-weight: bold; color: black">ils partagent le même charisme de charité et de témoignage; </span>
                     en Europe comme sur les autres continents, le vaste domaine de la santé (de l’assistance corporelle et spirituelle à l’enseignement) est, pour les camilliens, l’objet d’une attention particulière, capable de réponses soutenues par un «
@@ -28,6 +28,15 @@
                 </p>
 
                 <br>
+
+                <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+                  <mdb-carousel-item *ngFor="let image of imgTab">
+                    <div class="view w-100">
+                      <img class="d-block w-100" style="min-width: 400px; min-height: 300px; max-height: 580px; max-width: 2000px;" [src]=image alt="First slide">
+                    </div>
+                  </mdb-carousel-item>
+                </mdb-carousel>
+
                 <hr style=" margin-left: 22%; margin-top: 4%; margin-bottom: 5%; width:50%;">
 
             <section>
@@ -38,7 +47,7 @@
                   <button style="border: none; background-color: transparent;"><img src="assets/images/ph_mission3.jpg" class="img-fluid" style="min-width: 150px; min-height: 350px;" alt="img"
                            mdbTooltip="Afficher la galerie" 
                            (click)="basicModal1.show()"
-                           (click)="maGalery()"></button>
+                           (click)="maGalery(2)"></button>
                   </div>
                   <div class="col-sm-6 col-lg-6 col-md-6 col-xs-6">
                       <h5 style="color: rgb(29, 99, 190); text-align: justify;">LYON</h5>    
@@ -54,7 +63,7 @@
                       </p>
                       <button style="border: none; background-color: transparent;"                       
                               (click)="basicModal1.show()"
-                              (click)="maGalery()"><p style="font-weight: bold; color: rgb(29, 99, 190);"><mdb-icon fas icon="angle-right pr-3"></mdb-icon>Afficher la galerie</p>
+                              (click)="maGalery(2)"><p style="font-weight: bold; color: rgb(29, 99, 190);"><mdb-icon fas icon="angle-right pr-3"></mdb-icon>Afficher la galerie</p>
                       </button>
                   </div>
                   <hr style=" margin-left: 35%; margin-top: 4%; margin-bottom: 5%; width:25%; text-align: center;">
@@ -76,14 +85,14 @@
                     </p>
                     <button style="border: none; background-color: transparent;"                       
                             (click)="basicModal3.show()"
-                            (click)="maGalery()"><p style="font-weight: bold; color: rgb(29, 99, 190);"><mdb-icon fas icon="angle-right pr-3"></mdb-icon>Afficher la galerie</p>
+                            (click)="maGalery(1)"><p style="font-weight: bold; color: rgb(29, 99, 190);"><mdb-icon fas icon="angle-right pr-3"></mdb-icon>Afficher la galerie</p>
                     </button>
                 </div>
                 <div class="col-sm-6 col-lg-6 col-md-6 col-xs-6">
                   <button style="border: none; background-color: transparent;"><img src="assets/images/ph_mission4.jpg" class="img-fluid" style="min-width: 150px; min-height: 350px;" alt="img"
                            mdbTooltip="Afficher la galerie" 
                            (click)="basicModal3.show()"
-                           (click)="maGalery()"></button>
+                           (click)="maGalery(1)"></button>
                   </div>
                 <hr style=" margin-left: 35%; margin-top: 4%; margin-bottom: 5%; width:25%; text-align: center;">
             </div>
@@ -234,7 +243,7 @@
              *ngFor="let Photo of albumm.albumphotos; let i = index;" style="display: inline;" class="wprock-img-zoom-hover">
               <button type="button" class="btnImg wprock-img-zoom" (click)="galeryModal.show()"
                                                                    (click)="getIndex(i)">
-                  <img src="{{Photo.url}}" alt="problème d'affichage" title={{Photo.name}} class="img-thumbnail">
+                  <img src="{{Photo.url}}" alt="problème d'affichage" class="img-thumbnail">
               </button>       
         </div>
 
@@ -245,44 +254,6 @@
   </div>
 </div>
 
-     <!---------------------------------------- ALBUM Modal --------------------------------------->
-<div mdbModal #galeryModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalPopoversLabel"
-     style="max-width: 100%; max-height: 900px; text-align: center;">
-<div class="modal-dialog modal-fluid" role="document">
-<div class="modal-content" style="background-color: black;">
-
-<div class="modal-header">
-<h5 class="modal-title" id="exampleModalPopoversLabel" style="color: white; text-align:center">{{photoTitle}}</h5>
-<h5 class="modal-title" id="exampleModalPopoversLabel" style="color: white; text-align:center">{{photoTitle2}}</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="galeryModal.hide()"
-      style="color: red; margin-right: 47.3%;">
-      <i class="fas fa-times-circle fa-2x red-text"></i>
-</button>
-</div>
-
-<div class="modal-body">
-<img src="{{urlPhoto}}" alt="image indisponible" class="imgIntoModal" style="margin-right: 0.5cm;" title={{photoTitle}}>
-<img src="{{urlPhoto2}}" alt="image indisponible" class="imgIntoModal" title={{photoTitle2}}><br>
-</div>
-
-<div class="modal-footer">
-<div style="display: inline;">
-  <button type="button" style="background: transparent; border: none;" 
-          (click)="prev(urlPhoto)">
-      <i class="fas fa-chevron-circle-left fa-3x white-text"></i>
-  </button>
-
-  <button type="button" style="background: transparent; border: none; float:right;" 
-          (click)="next(urlPhoto)">
-      <i class="fas fa-chevron-circle-right fa-3x white-text"></i>
-  </button>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-     <!---------------------------------------- ALBUM Modal --------------------------------------->
 
 <div mdbModal #basicModal2="mdbModal" class="modal fade left" tabindex="-1" role="dialog" aria-labelledby="myBasicModal2Label"
 aria-hidden="true">
@@ -315,7 +286,13 @@ aria-hidden="true">
     </div>
     <div class="modal-body">
  <!---------------------------------------- ALBUM --------------------------------------->
-      ...
+  <div style="background-color: black; text-align: center;"
+       *ngFor="let Photo of albumm.albumphotos; let i = index;" style="display: inline;" class="wprock-img-zoom-hover">
+    <button type="button" class="btnImg wprock-img-zoom" (click)="getIndex(i)"
+                                                         (click)="galeryModal.show()"                                                       >
+        <img src="{{Photo.url}}" alt="problème d'affichage" class="img-thumbnail">
+    </button>       
+  </div>
  <!---------------------------------------- ALBUM --------------------------------------->
     </div>
     <div class="modal-footer">
@@ -352,4 +329,44 @@ aria-hidden="true">
 </div>
 </div>
 
-  <!-- zone modaux -->
+
+<!---------------------------------------- ALBUM Modal --------------------------------------->
+<div mdbModal #galeryModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalPopoversLabel"
+     style="max-width: 100%; max-height: 900px; text-align: center;">
+<div class="modal-dialog modal-fluid" role="document">
+<div class="modal-content" style="background-color: black;">
+
+<div class="modal-header">
+<!--
+<h5 class="modal-title" id="exampleModalPopoversLabel" style="color: white; text-align:center">{{photoTitle}}</h5>
+<h5 class="modal-title" id="exampleModalPopoversLabel" style="color: white; text-align:center">{{photoTitle2}}</h5>
+-->
+<button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="galeryModal.hide()"
+      style="color: red; margin-right: 46%;">
+      <i class="fas fa-times-circle fa-2x red-text"></i>
+</button><br><br>
+</div>
+
+<div class="modal-body">
+<img src="{{urlPhoto}}" alt="image indisponible" class="imgIntoModal" style="margin-right: 0.5cm;" title={{photoTitle}}>
+<img src="{{urlPhoto2}}" alt="image indisponible" class="imgIntoModal" title={{photoTitle2}}><br>
+</div>
+
+<div class="modal-footer">
+<div style="display: inline;">
+  <button type="button" style="background: transparent; border: none;" 
+          (click)="prev(urlPhoto)">
+      <i class="fas fa-chevron-circle-left fa-3x white-text"></i>
+  </button>
+
+  <button type="button" style="background: transparent; border: none; float:right;" 
+          (click)="next(urlPhoto)">
+      <i class="fas fa-chevron-circle-right fa-3x white-text"></i>
+  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!---------------------------------------- ALBUM Modal --------------------------------------->

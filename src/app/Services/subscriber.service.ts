@@ -37,8 +37,7 @@ export class SubscriberService {
       .subscribe(
         () => {
           console.log('Enregistrement terminé !');
-          this.subscribers.push(subscriber);
-          this.emitSubcribers();
+          this.getSubcribers();
         },
         (error) => {
           console.log('Erreur ! : ' + error);

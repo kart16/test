@@ -1,12 +1,29 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <!-- En tête et barre de menu générale -->
-    <img src="assets/images/Logo-province.jpg" class="img-fluid" style="min-width: 150px; min-height: 100px;" alt="#" class="imgCenter">
-  
-  <!--  <div class="words container-fluid" style="text-align: center"> L'Ordre des Serviteurs des Malades, Camilliens.</div>-->
-    <br>
-    <h2 style="text-align: center; font-weight: bold; color: rgb(4, 72, 161); font-family: 'Times New Roman', Times, serif" class="txt"> Servir les Malades jusqu'au péril de sa vie</h2>
-      
+
+<div class="row">
+  <div class="col-md-4 col-sm-4 col-lg-4">
+    <div style="margin-top: 5%;">
+      <img src="assets/images/Logo-province.jpg" class="img-fluid" style="min-width: 150px; min-height: 100px;" alt="#" class="imgCenter">
+    </div>
+  </div>
+
+  <div class="col-md-8 col-sm-8 col-lg-8">
+    <h4 style="margin-top: 10%; color: red;"><span style="font-weight: bolder;">Notre Vocation : </span><span style="color: green;">Servir les malades et les pauvres en témoignant de l’amour du Christ</span></h4>
+    <h4 style="margin-top: 5%; color: red;"><span style="font-weight: bolder;">Nos Valeurs : </span><span style="color: green;">Compassion, Respect, Ouverture, Écoute, Authenticité</span></h4>
+  </div>
+
+</div>
+
+    <div class="marquee-rtl" *ngIf="allNews!=''">
+      <!-- le contenu défilant -->
+      <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <i class="fas fa-info-circle pr-3"></i>
+        <b> {{allNews}}</b>
+      </h3>
+    </div>
+
     <!--Navbar-->
       <mdb-navbar SideClass="navbar navbar-expand-xl navbar-light lighten-5 z-depth-0" [containerInside]="false">
 
@@ -29,30 +46,29 @@
             </li>
 
             <!-- Dropdown -->
+            <li class="nav-item dropdown" dropdown>
+              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                QUI SOMMES-NOUS ?<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                  <a routerLink="st-camille-qui-es-tu" class="dropdown-item waves-light" mdbWavesEffect>Saint Camille qui est-tu ?</a>
+                  <a routerLink="des-religieux-au-service-des-malades" class="dropdown-item waves-light" mdbWavesEffect>Des religieux au service <br>des malades</a>
+                  <a routerLink="nos-communautes" class="dropdown-item waves-light" mdbWavesEffect>Nos communautés</a>
+                  <div class="divider dropdown-divider"></div>
+                  <a routerLink="/faire-un-don" class="dropdown-item waves-light" mdbWavesEffect>Comment nous aider ?</a>
+                </div>
+              </li>
               
               <li class="nav-item dropdown" dropdown>
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
                   NOTRE APOSTOLAT<span class="caret"></span></a>
                   <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a routerLink="aumoneries" class="dropdown-item waves-light" mdbWavesEffect >Les aumôneries</a>
+                    <a routerLink="les-aumoneries" class="dropdown-item waves-light" mdbWavesEffect >Les aumôneries</a>
                     <a routerLink="choisir-la-vie-consacree" class="dropdown-item waves-light" mdbWavesEffect >Choisir la vie consacrée</a>
                     <div class="divider dropdown-divider"></div>
                     <a routerLink="aller-plus-loin" class="dropdown-item waves-light" mdbWavesEffect >Aller plus loin</a>
-                    <a routerLink="livres" class="dropdown-item waves-light" mdbWavesEffect >Nos ouvrages</a>
+                    <a routerLink="nos-ouvrages" class="dropdown-item waves-light" mdbWavesEffect >Nos ouvrages</a>
                   </div>
                 </li>
-
-                <li class="nav-item dropdown" dropdown>
-                  <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                    QUI SOMMES-NOUS ?<span class="caret"></span></a>
-                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                      <a routerLink="st-camille-qui-es-tu" class="dropdown-item waves-light" mdbWavesEffect>Saint Camille qui est-tu ?</a>
-                      <a routerLink="des-religieux-au-service-des-malades" class="dropdown-item waves-light" mdbWavesEffect>Des religieux au service <br>des malades</a>
-                      <a routerLink="nos-communautes" class="dropdown-item waves-light" mdbWavesEffect>Nos communautés</a>
-                      <div class="divider dropdown-divider"></div>
-                      <a [routerLink]="'faire-un-don'" class="dropdown-item waves-light" mdbWavesEffect>Comment nous aider ?</a>
-                    </div>
-                  </li>
 
               <li class="nav-item">
                 <a routerLink="famille-camillienne-de-france" class="nav-link waves-light" mdbWavesEffect>LA FAMILLE CAMILLIENNE LAIQUE<span class="sr-only">(current)</span></a>
@@ -63,7 +79,7 @@
               </li>
 
               <li class="nav-item">
-                <a routerLink="fraternites-st-camille" class="nav-link waves-light" mdbWavesEffect>LES FRATERNITES St. CAMILLE<span class="sr-only">(current)</span></a>
+                <a routerLink="les-fraternites-st-camille" class="nav-link waves-light" mdbWavesEffect>LES FRATERNITES St. CAMILLE<span class="sr-only">(current)</span></a>
               </li>
                 
                 <li class="nav-item">
@@ -116,9 +132,9 @@
 
           <ul class="navbar-nav ml-auto nav-flex-icons">
             <li class="nav-item">
-              <a class="nav-link">
+              <a class="nav-link" style="text-align: center;">
                 <div class="btn-group" mdbDropdown>
-                  <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+                  <mdb-icon fas icon="user" size="lg" mdbDropdownToggle></mdb-icon>
                   <div class="dropdown-menu dropdown-menu-right dropdown-primary">
                     <a class="dropdown-item" (click)="modalConnexion.show()" *ngIf="!isAuth">Se connecter</a>
                     <a class="dropdown-item" routerLink="home" (click)="onSignOut()" *ngIf="isAuth" style="cursor: pointer;">Se déconnecter</a>
@@ -136,7 +152,7 @@
           </ul>
 
   
-        <!-- 
+        
 
         <div mdbModal #modalRegisterForm="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -178,7 +194,7 @@
           </div>
         </div>
 
-        -->
+      
 
 
         <div mdbModal #modalConnexion="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -281,7 +297,8 @@
                   <p class="heading lead">Modification(s) Enregistrée</p>
                   
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" 
-                                                      (click)="centralModalSuccess.hide()">
+                                                      (click)="centralModalSuccess.hide()"
+                                                      (click)="modalRegisterForm.hide()">
                     <span aria-hidden="true" class="white-text">&times;</span>
                   </button>
                 </div>
@@ -297,7 +314,8 @@
                 <!--Footer-->
                 <div class="modal-footer justify-content-center">
                   <a type="button" class="btn btn-outline-success waves-effect" 
-                                   data-dismiss="modal"
+                                   data-dismiss="modal" 
+                                   (click)="modalRegisterForm.hide()"
                                    (click)="centralModalSuccess.hide()">OK</a>
                 </div>
               </div>
@@ -350,27 +368,6 @@
         <!-- Collapsible content -->
 
       </mdb-navbar>
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       <!--/.Navbar-->

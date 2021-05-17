@@ -19,7 +19,7 @@ export class NosOuvragesComponent implements OnInit {
   
   fct(){
     for(var i=0;i<16;i++){
-      this.imgTab[i]="assets/images/pt_carte_"+(i+1)+".jpg";
+      this.imgTab[i]="../../assets/images/pt_carte_"+(i+1)+".jpg";
     }
   }
 

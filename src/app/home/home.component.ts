@@ -2,6 +2,13 @@ import { Component, HostListener, OnInit} from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { PrayerService } from '../Services/prayer.service';
 import { Prayer } from '../models/prayer.model';
+import { Subscription } from 'rxjs';
+import { CommunicationService } from '../Services/communication.service';
+import { Communication } from '../models/communication.model';
+import { FileService } from '../Services/file.service';
+import { File } from '../models/file.model';
+import { News } from '../models/news.model';
+
 
 @Component({
   selector: 'app-home',
@@ -10,16 +17,24 @@ import { Prayer } from '../models/prayer.model';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private prayerService: PrayerService, private formBuilder: FormBuilder) { }
+  constructor(private prayerService: PrayerService, 
+              private formBuilder: FormBuilder,
+              private fileService: FileService,
+              private comService: CommunicationService) { }
 
   imgTab: string[] = [];
   bulletinTab: number[] = [1, 2, 3];
   prayerForm: FormGroup;
   prayer: Prayer;
 
+  commSubscription: Subscription;
+  commun:Communication[]=[];
   isShow: boolean;
   topPosToStartShowing = 100;
 
+  fileSubscription: Subscription;
+  filesReq:File[];
+  singleCom: Communication = new Communication("","");
   /*longitude = 20.728218;
   latitude = 52.128973;
   markers = [
@@ -27,13 +42,30 @@ export class HomeComponent implements OnInit {
   ];*/
 
   ngOnInit() { 
+
+    this.commSubscription = this.comService.communicationSubject.subscribe(
+      (comm:Communication[]) =>{
+        this.commun = comm;
+      }
+    );
+    this.comService.getCommunications();
+
+    this.fileSubscription = this.fileService.filesSubject.subscribe(
+        (files: File[]) => {
+          this.filesReq = files.slice().reverse();  //copie inversée de la liste 
+      }
+    );
+    this.fileService.getFiles();
+
     this.fct();
     this.initForm();
+    
   }
-  
+
+
   fct(){
-    for(var i=0;i<7;i++){
-      this.imgTab[i]="assets/images/img"+(i+1)+".jpg";
+    for(var i=0;i<14;i++){
+      this.imgTab[i]="../../assets/images/Page d'accueil ("+(i+1)+").jpg";
     }
   }
 
@@ -68,7 +100,7 @@ export class HomeComponent implements OnInit {
   @HostListener('window:scroll')
   checkScroll() {
       
-    // window의 scroll top
+    // window의 scroll top  
     // Both window.pageYOffset and document.documentElement.scrollTop returns the same result in all the cases. window.pageYOffset is not supported below IE 9.
 
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -89,5 +121,20 @@ export class HomeComponent implements OnInit {
       left: 0, 
       behavior: 'smooth' 
     });
+  }
+
+  getComId(i:number){
+    const Id = i;
+    this.comService.getSingleCommunication(Id).then(
+      (singleCo:Communication) =>{
+        this.singleCom = singleCo;
+    },(error)=>{
+      console.log("SingleCommunication inexistant");
+      console.log(error);
+    });
+  }
+
+  ngOnDestroy() {
+    this.commSubscription.unsubscribe();
   }
 }

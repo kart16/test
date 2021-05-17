@@ -24,6 +24,7 @@ export class NosCommunautesComponent implements OnInit {
   photoTitle: string;
   urlPhoto2: string;
   photoTitle2: string;
+  imgTab: string[] = [];
 
   constructor(private router: Router,
               private albumService: AlbumService) { }
@@ -36,7 +37,7 @@ export class NosCommunautesComponent implements OnInit {
       }
     );
     this.albumService.getAlbums();
-
+    this.fct();
   }
 
   @HostListener('window:scroll')
@@ -65,6 +66,12 @@ export class NosCommunautesComponent implements OnInit {
     });
   }
 
+  fct(){
+    for(var i=0;i<3;i++){
+      this.imgTab[i]="../../assets/images/Nos communautes ("+(i+1)+").jpg";
+    }
+  }
+
   getAlbum(albumName){
     this.albumSubscription = this.albumService.albumsMapS.get(albumName).subscribe(
       (album: Album) =>{
@@ -88,45 +95,78 @@ export class NosCommunautesComponent implements OnInit {
       this.album = this.albumNames[2];
       this.getAlbum(this.album);
 
-    }
+    }else if(num==4){
+    this.album = this.albumNames[3];
+    this.getAlbum(this.album);
+
+   }
   }
 
-  maGalery(){
-    this.albumSelect(3);
+  maGalery(Id:number){
+    this.albumSelect(Id);
   }
 
   
-  getIndex(i){
-    this.urlPhoto = this.albumm.albumphotos[i].url; 
-    this.urlPhoto2 = this.albumm.albumphotos[i+1].url; 
+  getIndex(i:number){
+      if(i!=(this.albumm.albumphotos.length-1)){
+      this.urlPhoto = this.albumm.albumphotos[i].url; 
+      this.urlPhoto2 = this.albumm.albumphotos[i+1].url; 
+  
+      this.photoTitle = this.albumm.albumphotos[i].name;
+      this.photoTitle2 = this.albumm.albumphotos[i+1].name;
+    }else{
+      this.urlPhoto = this.albumm.albumphotos[i-1].url; 
+      this.urlPhoto2 = this.albumm.albumphotos[i].url;
 
-    this.photoTitle = this.albumm.albumphotos[i].name;
-    this.photoTitle2 = this.albumm.albumphotos[i+1].name;
+      this.photoTitle = this.albumm.albumphotos[i-1].name;
+      this.photoTitle2 = this.albumm.albumphotos[i].name;
+    } 
   }
   
   next(url){
-    for(var i=0;i<this.albumm.albumphotos.length;i++){
-      if(this.albumm.albumphotos[i].url===url){
-        this.urlPhoto = this.albumm.albumphotos[i+1].url;
-        this.urlPhoto2 = this.albumm.albumphotos[i+2].url;
+    if(url!=this.albumm.albumphotos[this.albumm.albumphotos.length-1].url){
+        var i = 0;
+        while((i+2)<this.albumm.albumphotos.length){
+        if(this.albumm.albumphotos[i].url===url){
+          this.urlPhoto = this.albumm.albumphotos[i+1].url;
+          this.urlPhoto2 = this.albumm.albumphotos[i+2].url;
 
-        this.photoTitle = this.albumm.albumphotos[i+1].name;
-        this.photoTitle2 = this.albumm.albumphotos[i+2].name;
+          this.photoTitle = this.albumm.albumphotos[i+1].name;
+          this.photoTitle2 = this.albumm.albumphotos[i+2].name;
+        }
+        i++;
       }
-    }
     
+    }else{
+      this.photoTitle = this.albumm.albumphotos[this.albumm.albumphotos.length-2].name;
+      this.photoTitle2 = this.albumm.albumphotos[this.albumm.albumphotos.length-1].name;
+
+      this.urlPhoto = this.albumm.albumphotos[this.albumm.albumphotos.length-2].url;
+      this.urlPhoto2 = this.albumm.albumphotos[this.albumm.albumphotos.length-1].url;
+    }
   }
 
   prev(url){
-    for(var i=0;i<this.albumm.albumphotos.length;i++){
-      if(this.albumm.albumphotos[i].url===url){
-        this.urlPhoto = this.albumm.albumphotos[i-1].url;
-        this.urlPhoto2 = this.albumm.albumphotos[i-2].url;
-        
-        this.photoTitle = this.albumm.albumphotos[i-1].name;
-        this.photoTitle2 = this.albumm.albumphotos[i-2].name;
+    if(url!=this.albumm.albumphotos[0].url){
+      var i = this.albumm.albumphotos.length-1;
+      while(i>=0){
+        if(this.albumm.albumphotos[i].url===url){
+          this.urlPhoto = this.albumm.albumphotos[i-1].url;
+          this.urlPhoto2 = this.albumm.albumphotos[i].url;
+          
+          this.photoTitle = this.albumm.albumphotos[i-1].name;
+          this.photoTitle2 = this.albumm.albumphotos[i].name;
+        }
+        i--;
       }
+    }else{
+      this.photoTitle = this.albumm.albumphotos[0].name;
+      this.photoTitle2 = this.albumm.albumphotos[1].name;
+
+      this.urlPhoto = this.albumm.albumphotos[0].url;
+      this.urlPhoto2 = this.albumm.albumphotos[1].url;
     }
+    
   }
 
   ngOnDestroy() {

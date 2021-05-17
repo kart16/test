@@ -121,6 +121,7 @@
               <br>
               <div [ngbNavOutlet]="nav" class="mt-2"></div>
             <br>
+            <button *ngIf="isShow" type="button" mdbBtn class="open-button relative waves-light image-clignote" (click)="gotoTop()" mdbWavesEffect style="z-index: 6;"><mdb-icon fas icon="chevron-up" size="3x" class="red-text pr-3"></mdb-icon></button>
           </div>
         </div>
     </div>

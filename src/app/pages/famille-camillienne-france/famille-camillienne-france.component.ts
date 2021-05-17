@@ -9,8 +9,13 @@ export class FamilleCamillienneFranceComponent{
 
   isShow: boolean;
   topPosToStartShowing = 100;
+  imgTab: string[] = [];
 
   constructor() { }
+
+  ngOnInit() {
+    this.fct();
+  }
 
   @HostListener('window:scroll')
   checkScroll() {
@@ -36,6 +41,12 @@ export class FamilleCamillienneFranceComponent{
       left: 0, 
       behavior: 'smooth' 
     });
+  }
+
+  fct(){
+    for(var i=0;i<4;i++){
+      this.imgTab[i]="../../assets/images/Famille Camillienne Laique ("+(i+1)+").jpg";
+    }
   }
 
 }

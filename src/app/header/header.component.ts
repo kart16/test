@@ -7,15 +7,25 @@ import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
 import * as firebase from 'firebase';
 
+
+import { NewsService } from '../Services/news.service';
+import { News } from '../models/news.model';
+declare var anime: any; 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit{
 
   prayersSubscription: Subscription;
   prayer: any[];
+
+  newsSubscription: Subscription;
+  news: News[];
+  allNews: String = "";
+  newsContent: String[] = [];
 
   ModifForm: FormGroup;
   signInForm: FormGroup;
@@ -29,6 +39,7 @@ export class HeaderComponent implements OnInit {
   constructor(private prayerService: PrayerService,
               private formbuilder: FormBuilder,
               private authService: AuthService,
+              private newsService: NewsService,
               private router: Router) { }
 
   ngOnInit() {
@@ -39,6 +50,18 @@ export class HeaderComponent implements OnInit {
       }
     );
     this.prayerService.getPrayers();
+
+    
+    this.newsSubscription = this.newsService.newsSubject.subscribe(
+      (news:News[]) =>{
+        this.news = news;
+        for(let i=0;i<this.news.length;i++){
+          this.newsContent[i]=this.news[i].content;
+        }
+        this.allNews = this.newsContent.join("  ||  ");
+      }
+    );
+    this.newsService.getNews();
 
     this.initForm();
 
@@ -62,10 +85,6 @@ export class HeaderComponent implements OnInit {
     this.prayerService.getPrayers();
   }
 
-  ngOnDestroy() {
-    this.prayersSubscription.unsubscribe();
-  }
-
   initForm(){
     this.ModifForm = this.formbuilder.group({
       password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
@@ -81,10 +100,10 @@ export class HeaderComponent implements OnInit {
     })
   }
   
-/*   onSubmit() {
+  onSubmit() {
     const newPass = this.ModifForm.get('password').value;
     this.authService.updatePasswordInFirebase(newPass);
-  } */
+  }
 
   onSubmited(){
     const email = this.signInForm.get('email').value;
@@ -122,6 +141,11 @@ export class HeaderComponent implements OnInit {
   async sendPasswordResetEmail(passwordResetEmail: string) {
     return await firebase.auth().sendPasswordResetEmail(passwordResetEmail);
   }
+
+ ngOnDestroy() {
+  this.prayersSubscription.unsubscribe();
+  this.newsSubscription.unsubscribe();
+ }
 
 }
 

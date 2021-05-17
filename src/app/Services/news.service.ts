@@ -38,9 +38,7 @@ export class NewsService {
       .subscribe(
         () => {
             console.log('Enregistrement terminé !');
-            this.news.push(news);
-            console.log( this.news);
-            this.emitNews();
+            this.getNews();
           },
           (error) => {
             console.log('Erreur ! : ' + error);
@@ -51,7 +49,7 @@ export class NewsService {
   emitNews() {
     this.newsSubject.next(this.news);
   }
-
+  
   removeNews(id:number) {
     this.httpClient
       .delete('http://localhost:3000/api/news/' + id)

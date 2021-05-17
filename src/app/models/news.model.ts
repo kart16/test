@@ -1,8 +1,5 @@
 export class News {
-  constructor(public title: string, 
-              public content: string, 
-              public date: Date, 
-              public creation_date? : Date,
+  constructor(public content: string, 
               public id?: number) {
   }
 }

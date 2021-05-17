@@ -35,27 +35,6 @@ import { AllerPlusLoinComponent } from './pages/aller-plus-loin/aller-plus-loin.
 import { AumoneriesComponent } from './pages/aumoneries/aumoneries.component';
 import { NosOuvragesComponent } from './pages/nos-ouvrages/nos-ouvrages.component';
 
-const appRoutes: Routes = [
-
-  { path: 'adminPage', canActivate: [AuthGuardService], component: AdminPageComponent},
-  { path: 'adminPage/view/:id', canActivate: [AuthGuardService], component: GalerieComponent},
-  
-  { path: 'livres', component: NosOuvragesComponent},
-  { path: 'nos-communautes', component: NosCommunautesComponent},
-  { path: 'st-camille-qui-es-tu', component: StCamQuiEsTuComponent },
-  { path: 'des-religieux-au-service-des-malades', component: DesReligServMaladComponent},
-  { path: 'faire-un-don', component: FaireUnDonComponent },
-  { path: 'famille-camillienne-de-france', component: FamilleCamillienneFranceComponent},
-  { path: 'choisir-la-vie-consacree', component: ChoisirLaVieConsacreeComponent},
-  { path: 'fraternites-st-camille', component: LesFraternitesStCamilleComponent},
-  { path: 'missions-camilliennes', component: MissionsCamilliennesComponent},
-  { path: 'aumoneries', component: AumoneriesComponent},
-  { path: 'aller-plus-loin', component: AllerPlusLoinComponent},
-  { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' }
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,9 +58,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes,{
-      anchorScrolling: 'enabled'
-    }),
     NgxPayPalModule,
     FormsModule,
     HttpClientModule,
