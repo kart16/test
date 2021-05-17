@@ -68,7 +68,7 @@ export class NosCommunautesComponent implements OnInit {
 
   fct(){
     for(var i=0;i<3;i++){
-      this.imgTab[i]="../../assets/images/Nos communautes ("+(i+1)+").jpg";
+      this.imgTab[i]="assets/images/Noscommunautes("+(i+1)+").jpg";
     }
   }
 

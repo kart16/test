@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
 
   fct(){
     for(var i=0;i<14;i++){
-      this.imgTab[i]="../../assets/images/Page d'accueil ("+(i+1)+").jpg";
+      this.imgTab[i]="assets/images/Pageaccueil("+(i+1)+").jpg";
     }
   }
 
