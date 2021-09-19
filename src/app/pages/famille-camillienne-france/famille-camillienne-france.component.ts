@@ -45,7 +45,7 @@ export class FamilleCamillienneFranceComponent{
 
   fct(){
     for(var i=0;i<4;i++){
-      this.imgTab[i]="assets/images/FamilleCamillienneLaique("+(i+1)+").jpg";
+      this.imgTab[i]="../../assets/images/Famille Camillienne Laique ("+(i+1)+").jpg";
     }
   }
 

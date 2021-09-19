@@ -24,8 +24,8 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/assets",
-              "src/insigne.png"
+              "src/assets/insigne.ico",
+              "src/assets"
             ],
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
@@ -39,6 +39,7 @@
               "./src/styles.scss"
             ],
             "scripts": [
+
               "node_modules/chart.js/dist/Chart.js",
               "node_modules/hammerjs/hammer.min.js",
               "./src/assets/js/faire-apparaitre-du-texte.js",
@@ -131,10 +132,6 @@
               "devServerTarget": "mon-projet-angular:serve:production"
             }
           }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {}
         }
       }
     }

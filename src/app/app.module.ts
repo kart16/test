@@ -34,6 +34,7 @@ import { MissionsCamilliennesComponent } from './pages/missions-camilliennes/mis
 import { AllerPlusLoinComponent } from './pages/aller-plus-loin/aller-plus-loin.component';
 import { AumoneriesComponent } from './pages/aumoneries/aumoneries.component';
 import { NosOuvragesComponent } from './pages/nos-ouvrages/nos-ouvrages.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { NosOuvragesComponent } from './pages/nos-ouvrages/nos-ouvrages.componen
     AllerPlusLoinComponent,
     AumoneriesComponent,
     NosOuvragesComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,

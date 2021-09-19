@@ -100,10 +100,10 @@ export class HeaderComponent implements OnInit{
     })
   }
   
-  onSubmit() {
+/*   onSubmit() {
     const newPass = this.ModifForm.get('password').value;
     this.authService.updatePasswordInFirebase(newPass);
-  }
+  } */
 
   onSubmited(){
     const email = this.signInForm.get('email').value;

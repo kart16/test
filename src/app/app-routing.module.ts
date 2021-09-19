@@ -21,20 +21,22 @@ const routes: Routes = [
   { path: 'adminPage', canActivate: [AuthGuardService], component: AdminPageComponent},
   { path: 'adminPage/view/:id', canActivate: [AuthGuardService], component: GalerieComponent},
 
-  { path: 'faire-un-don', component: FaireUnDonComponent },
-  { path: 'st-camille-qui-es-tu', component: StCamQuiEsTuComponent },
-  { path: 'famille-camillienne-de-france', component: FamilleCamillienneFranceComponent},
-  { path: 'choisir-la-vie-consacree', component: ChoisirLaVieConsacreeComponent},
-  { path: 'des-religieux-au-service-des-malades', component: DesReligServMaladComponent},
-  { path: 'home', component: HomeComponent },
-  { path: 'adminPage', canActivate: [AuthGuardService], component: AdminPageComponent},
-  { path: 'nos-communautes', component: NosCommunautesComponent},
-  { path: 'les-fraternites-st-camille', component: LesFraternitesStCamilleComponent},
-  { path: 'missions-camilliennes', component: MissionsCamilliennesComponent},
-  { path: 'les-aumoneries', component: AumoneriesComponent},
-  { path: 'aller-plus-loin', component: AllerPlusLoinComponent},
-  { path: 'nos-ouvrages', component: NosOuvragesComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'faire-un-don', component: FaireUnDonComponent, data: { breadcrumb: 'Qui sommes nous ? > Faire un don'} },
+  { path: 'st-camille-qui-es-tu', component: StCamQuiEsTuComponent, data: { breadcrumb: 'Qui sommes nous ? > Saint Camille qui es tu ?' } },
+  { path: 'des-religieux-au-service-des-malades', component: DesReligServMaladComponent, data: { breadcrumb: 'Qui sommes nous ? > Des religieux au service des malades' }  },
+  { path: 'nos-communautes', component: NosCommunautesComponent, data: { breadcrumb: 'Qui sommes nous ? > Nos communautés' }  },
+
+  { path: 'les-aumoneries', component: AumoneriesComponent, data: { breadcrumb: 'Notre apostolat > Les aumoneries' }  },
+  { path: 'choisir-la-vie-consacree', component: ChoisirLaVieConsacreeComponent, data: { breadcrumb: 'Notre apostolat > Choisir la vie consacrée' }  },
+  { path: 'aller-plus-loin', component: AllerPlusLoinComponent, data: { breadcrumb: 'Notre apostolat > Aller plus loin' }  },
+  { path: 'nos-ouvrages', component: NosOuvragesComponent, data: { breadcrumb: 'Notre apostolat > Nos ouvrages' }  },
+
+  { path: 'famille-camillienne-de-france', component: FamilleCamillienneFranceComponent, data: { breadcrumb: 'Famille camillienne de France' }  },
+  { path: 'les-fraternites-st-camille', component: LesFraternitesStCamilleComponent, data: { breadcrumb: 'Les fraternités de Saint Camille' }  },
+  { path: 'missions-camilliennes', component: MissionsCamilliennesComponent, data: { breadcrumb: 'Mission camilliennes' }  },
+
+  { path: 'home', component: HomeComponent, data: { breadcrumb: 'Accueil' }  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' },
 ];
 

@@ -3,15 +3,21 @@
 <!-- En tête et barre de menu générale -->
 
 <div class="row">
-  <div class="col-md-4 col-sm-4 col-lg-4">
-    <div style="margin-top: 5%;">
-      <img src="assets/images/Logo-province.jpg" class="img-fluid" style="min-width: 150px; min-height: 100px;" alt="#" class="imgCenter">
+  <div class="col-md-3 col-sm-4 col-lg-2">
+    <div style="margin-top: 3%;">
+      <a routerLink="home"><img src="../../assets/images/Logo-province.jpg" class="img-fluid" style="min-width: 80px; min-height: 80px;" alt="#" class="imgCenter"></a>
     </div>
   </div>
 
-  <div class="col-md-8 col-sm-8 col-lg-8">
-    <h4 style="margin-top: 10%; color: red;"><span style="font-weight: bolder;">Notre Vocation : </span><span style="color: green;">Servir les malades et les pauvres en témoignant de l’amour du Christ</span></h4>
-    <h4 style="margin-top: 5%; color: red;"><span style="font-weight: bolder;">Nos Valeurs : </span><span style="color: green;">Compassion, Respect, Ouverture, Écoute, Authenticité</span></h4>
+  <div class="col-md-6 col-sm-4 col-lg-8">
+    <h5 style="margin-top: 3%; color: red; text-align: center;"><span style="font-weight: bolder;">Notre Vocation : </span><span style="color: rgb(29, 99, 190); font-weight: bolder;">Servir les malades et les pauvres en témoignant de l’amour du Christ</span></h5>
+    <h5 style="margin-top: 3%; color: red; text-align: center;"><span style="font-weight: bolder;">Nos Valeurs : </span><span style="color: rgb(29, 99, 190); font-weight: bolder;">Compassion, Respect, Ouverture, Écoute, Authenticité</span></h5>
+  </div>
+
+  <div class="col-md-3 col-sm-4 col-lg-2">
+    <div style="margin-top: 3%;">
+      <a routerLink="home"><img src="../../assets/images/saintCamille_1.PNG" class="img-fluid" style="min-width: 100px; min-height: 100px;" alt="#" class="imgCenter"></a>
+    </div>
   </div>
 
 </div>
@@ -27,12 +33,12 @@
     <!--Navbar-->
       <mdb-navbar SideClass="navbar navbar-expand-xl navbar-light lighten-5 z-depth-0" [containerInside]="false">
 
-        <!-- Navbar brand -->
+        <!-- Navbar brand 
         <mdb-navbar-brand>
           <a class="navbar-brand">
-            <img src="assets/images/saintC.png" height="90" class="d-inline-block align-top" alt="">
+            <img src="../../assets/images/saintC.png" height="90" class="d-inline-block align-top" alt="">
           </a>
-        </mdb-navbar-brand>
+        </mdb-navbar-brand>-->
 
         <!-- Collapsible content -->
         <links>
@@ -46,7 +52,7 @@
             </li>
 
             <!-- Dropdown -->
-            <li class="nav-item dropdown" dropdown>
+            <li class="nav-item dropdown" dropdown [routerLinkActive]="['active']">
               <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
                 QUI SOMMES-NOUS ?<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
@@ -54,11 +60,11 @@
                   <a routerLink="des-religieux-au-service-des-malades" class="dropdown-item waves-light" mdbWavesEffect>Des religieux au service <br>des malades</a>
                   <a routerLink="nos-communautes" class="dropdown-item waves-light" mdbWavesEffect>Nos communautés</a>
                   <div class="divider dropdown-divider"></div>
-                  <a routerLink="/faire-un-don" class="dropdown-item waves-light" mdbWavesEffect>Comment nous aider ?</a>
+                  <a routerLink="faire-un-don" class="dropdown-item waves-light" mdbWavesEffect>Comment nous aider ?</a>
                 </div>
               </li>
               
-              <li class="nav-item dropdown" dropdown>
+              <li class="nav-item dropdown" dropdown [routerLinkActive]="['active']">
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
                   NOTRE APOSTOLAT<span class="caret"></span></a>
                   <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
@@ -70,19 +76,19 @@
                   </div>
                 </li>
 
-              <li class="nav-item">
+              <li class="nav-item" [routerLinkActive]="['active']">
                 <a routerLink="famille-camillienne-de-france" class="nav-link waves-light" mdbWavesEffect>LA FAMILLE CAMILLIENNE LAIQUE<span class="sr-only">(current)</span></a>
               </li>
 
-              <li class="nav-item">
+              <li class="nav-item" [routerLinkActive]="['active']">
                 <a routerLink="missions-camilliennes" class="nav-link waves-light" mdbWavesEffect>LES MISSIONS CAMILLIENNES<span class="sr-only">(current)</span></a>
               </li>
 
-              <li class="nav-item">
+              <li class="nav-item" [routerLinkActive]="['active']">
                 <a routerLink="les-fraternites-st-camille" class="nav-link waves-light" mdbWavesEffect>LES FRATERNITES St. CAMILLE<span class="sr-only">(current)</span></a>
               </li>
                 
-                <li class="nav-item">
+                <li class="nav-item" [routerLinkActive]="['active']">
                   <a class="nav-link waves-light" (click)="basicModal.show()" mdbWavesEffect>NOS INTENTIONS</a>
                 </li>
 
@@ -152,7 +158,7 @@
           </ul>
 
   
-        
+        <!-- 
 
         <div mdbModal #modalRegisterForm="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -194,7 +200,7 @@
           </div>
         </div>
 
-      
+        -->
 
 
         <div mdbModal #modalConnexion="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -368,6 +374,8 @@
         <!-- Collapsible content -->
 
       </mdb-navbar>
+      <br>
+      <br>
 
 
       <!--/.Navbar-->
